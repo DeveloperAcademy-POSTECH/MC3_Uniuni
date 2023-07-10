@@ -7,89 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0248AC09B5EEA9E162746145 /* Pods_bearChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 014349851E8C110EADBCD1F9 /* Pods_bearChat.framework */; };
-		FFEB5A2B2A56A7D800E8BDA6 /* bearChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB5A2A2A56A7D800E8BDA6 /* bearChatApp.swift */; };
-		FFEB5A2D2A56A7D800E8BDA6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEB5A2C2A56A7D800E8BDA6 /* ContentView.swift */; };
-		FFEB5A2F2A56A7D900E8BDA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEB5A2E2A56A7D900E8BDA6 /* Assets.xcassets */; };
-		FFEB5A322A56A7D900E8BDA6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEB5A312A56A7D900E8BDA6 /* Preview Assets.xcassets */; };
-		FFEB5A392A56A8BC00E8BDA6 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FFEB5A382A56A8BC00E8BDA6 /* .swiftlint.yml */; };
+		BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */; };
+		BF31D63C2A5BAB970069D5FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D63B2A5BAB970069D5FF /* ContentView.swift */; };
+		BF31D63E2A5BAB980069D5FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF31D63D2A5BAB980069D5FF /* Assets.xcassets */; };
+		BF31D6412A5BAB980069D5FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF31D6402A5BAB980069D5FF /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		014349851E8C110EADBCD1F9 /* Pods_bearChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bearChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3524EB1A55E3C4BEAA4322B2 /* Pods-bearChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bearChat.release.xcconfig"; path = "Target Support Files/Pods-bearChat/Pods-bearChat.release.xcconfig"; sourceTree = "<group>"; };
-		CDAC69017AD676920916C0AE /* Pods-bearChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bearChat.debug.xcconfig"; path = "Target Support Files/Pods-bearChat/Pods-bearChat.debug.xcconfig"; sourceTree = "<group>"; };
-		FFEB5A272A56A7D800E8BDA6 /* bearChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bearChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFEB5A2A2A56A7D800E8BDA6 /* bearChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bearChatApp.swift; sourceTree = "<group>"; };
-		FFEB5A2C2A56A7D800E8BDA6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FFEB5A2E2A56A7D900E8BDA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FFEB5A312A56A7D900E8BDA6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FFEB5A382A56A8BC00E8BDA6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		BF31D6362A5BAB970069D5FF /* BeerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerChatApp.swift; sourceTree = "<group>"; };
+		BF31D63B2A5BAB970069D5FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BF31D63D2A5BAB980069D5FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BF31D6402A5BAB980069D5FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FFEB5A242A56A7D800E8BDA6 /* Frameworks */ = {
+		BF31D6332A5BAB970069D5FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0248AC09B5EEA9E162746145 /* Pods_bearChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B3E6522FC86686486A6A5794 /* Pods */ = {
+		BF31D62D2A5BAB970069D5FF = {
 			isa = PBXGroup;
 			children = (
-				CDAC69017AD676920916C0AE /* Pods-bearChat.debug.xcconfig */,
-				3524EB1A55E3C4BEAA4322B2 /* Pods-bearChat.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		E34133C850E3DAB7A87185B7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				014349851E8C110EADBCD1F9 /* Pods_bearChat.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FFEB5A1E2A56A7D800E8BDA6 = {
-			isa = PBXGroup;
-			children = (
-				FFEB5A382A56A8BC00E8BDA6 /* .swiftlint.yml */,
-				FFEB5A292A56A7D800E8BDA6 /* bearChat */,
-				FFEB5A282A56A7D800E8BDA6 /* Products */,
-				B3E6522FC86686486A6A5794 /* Pods */,
-				E34133C850E3DAB7A87185B7 /* Frameworks */,
+				BF31D6382A5BAB970069D5FF /* BeerChat */,
+				BF31D6372A5BAB970069D5FF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		FFEB5A282A56A7D800E8BDA6 /* Products */ = {
+		BF31D6372A5BAB970069D5FF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FFEB5A272A56A7D800E8BDA6 /* bearChat.app */,
+				BF31D6362A5BAB970069D5FF /* BeerChat.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FFEB5A292A56A7D800E8BDA6 /* bearChat */ = {
+		BF31D6382A5BAB970069D5FF /* BeerChat */ = {
 			isa = PBXGroup;
 			children = (
-				FFEB5A2A2A56A7D800E8BDA6 /* bearChatApp.swift */,
-				FFEB5A2C2A56A7D800E8BDA6 /* ContentView.swift */,
-				FFEB5A2E2A56A7D900E8BDA6 /* Assets.xcassets */,
-				FFEB5A302A56A7D900E8BDA6 /* Preview Content */,
+				BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */,
+				BF31D63B2A5BAB970069D5FF /* ContentView.swift */,
+				BF31D63D2A5BAB980069D5FF /* Assets.xcassets */,
+				BF31D63F2A5BAB980069D5FF /* Preview Content */,
 			);
-			path = bearChat;
+			path = BeerChat;
 			sourceTree = "<group>";
 		};
-		FFEB5A302A56A7D900E8BDA6 /* Preview Content */ = {
+		BF31D63F2A5BAB980069D5FF /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				FFEB5A312A56A7D900E8BDA6 /* Preview Assets.xcassets */,
+				BF31D6402A5BAB980069D5FF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -97,41 +70,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FFEB5A262A56A7D800E8BDA6 /* bearChat */ = {
+		BF31D6352A5BAB970069D5FF /* BeerChat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FFEB5A352A56A7D900E8BDA6 /* Build configuration list for PBXNativeTarget "bearChat" */;
+			buildConfigurationList = BF31D6442A5BAB980069D5FF /* Build configuration list for PBXNativeTarget "BeerChat" */;
 			buildPhases = (
-				6F42271884FC79582D4F6EE5 /* [CP] Check Pods Manifest.lock */,
-				FFEB5A232A56A7D800E8BDA6 /* Sources */,
-				FFEB5A3A2A56A8D000E8BDA6 /* SwiftLint Run */,
-				FFEB5A242A56A7D800E8BDA6 /* Frameworks */,
-				FFEB5A252A56A7D800E8BDA6 /* Resources */,
+				BF31D6472A5BABE50069D5FF /* SwiftLint */,
+				BF31D6322A5BAB970069D5FF /* Sources */,
+				BF31D6332A5BAB970069D5FF /* Frameworks */,
+				BF31D6342A5BAB970069D5FF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = bearChat;
-			productName = bearChat;
-			productReference = FFEB5A272A56A7D800E8BDA6 /* bearChat.app */;
+			name = BeerChat;
+			productName = BeerChat;
+			productReference = BF31D6362A5BAB970069D5FF /* BeerChat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FFEB5A1F2A56A7D800E8BDA6 /* Project object */ = {
+		BF31D62E2A5BAB970069D5FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					FFEB5A262A56A7D800E8BDA6 = {
-						CreatedOnToolsVersion = 14.3.1;
+					BF31D6352A5BAB970069D5FF = {
+						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = FFEB5A222A56A7D800E8BDA6 /* Build configuration list for PBXProject "bearChat" */;
+			buildConfigurationList = BF31D6312A5BAB970069D5FF /* Build configuration list for PBXProject "BeerChat" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -139,54 +111,32 @@
 				en,
 				Base,
 			);
-			mainGroup = FFEB5A1E2A56A7D800E8BDA6;
-			productRefGroup = FFEB5A282A56A7D800E8BDA6 /* Products */;
+			mainGroup = BF31D62D2A5BAB970069D5FF;
+			productRefGroup = BF31D6372A5BAB970069D5FF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FFEB5A262A56A7D800E8BDA6 /* bearChat */,
+				BF31D6352A5BAB970069D5FF /* BeerChat */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FFEB5A252A56A7D800E8BDA6 /* Resources */ = {
+		BF31D6342A5BAB970069D5FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFEB5A392A56A8BC00E8BDA6 /* .swiftlint.yml in Resources */,
-				FFEB5A322A56A7D900E8BDA6 /* Preview Assets.xcassets in Resources */,
-				FFEB5A2F2A56A7D900E8BDA6 /* Assets.xcassets in Resources */,
+				BF31D6412A5BAB980069D5FF /* Preview Assets.xcassets in Resources */,
+				BF31D63E2A5BAB980069D5FF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6F42271884FC79582D4F6EE5 /* [CP] Check Pods Manifest.lock */ = {
+		BF31D6472A5BABE50069D5FF /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-bearChat-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FFEB5A3A2A56A8D000E8BDA6 /* SwiftLint Run */ = {
-			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -194,31 +144,31 @@
 			);
 			inputPaths = (
 			);
-			name = "SwiftLint Run";
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FFEB5A232A56A7D800E8BDA6 /* Sources */ = {
+		BF31D6322A5BAB970069D5FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFEB5A2D2A56A7D800E8BDA6 /* ContentView.swift in Sources */,
-				FFEB5A2B2A56A7D800E8BDA6 /* bearChatApp.swift in Sources */,
+				BF31D63C2A5BAB970069D5FF /* ContentView.swift in Sources */,
+				BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		FFEB5A332A56A7D900E8BDA6 /* Debug */ = {
+		BF31D6422A5BAB980069D5FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -268,7 +218,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -278,7 +228,7 @@
 			};
 			name = Debug;
 		};
-		FFEB5A342A56A7D900E8BDA6 /* Release */ = {
+		BF31D6432A5BAB980069D5FF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -322,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -332,15 +282,15 @@
 			};
 			name = Release;
 		};
-		FFEB5A362A56A7D900E8BDA6 /* Debug */ = {
+		BF31D6452A5BAB980069D5FF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDAC69017AD676920916C0AE /* Pods-bearChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"bearChat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BeerChat/Preview Content\"";
+				DEVELOPMENT_TEAM = DD8VYBJ73D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -353,7 +303,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uniuni.bearChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhunhe.BeerChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -361,15 +311,15 @@
 			};
 			name = Debug;
 		};
-		FFEB5A372A56A7D900E8BDA6 /* Release */ = {
+		BF31D6462A5BAB980069D5FF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3524EB1A55E3C4BEAA4322B2 /* Pods-bearChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"bearChat/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BeerChat/Preview Content\"";
+				DEVELOPMENT_TEAM = DD8VYBJ73D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -382,7 +332,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = uniuni.bearChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhunhe.BeerChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -393,25 +343,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FFEB5A222A56A7D800E8BDA6 /* Build configuration list for PBXProject "bearChat" */ = {
+		BF31D6312A5BAB970069D5FF /* Build configuration list for PBXProject "BeerChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FFEB5A332A56A7D900E8BDA6 /* Debug */,
-				FFEB5A342A56A7D900E8BDA6 /* Release */,
+				BF31D6422A5BAB980069D5FF /* Debug */,
+				BF31D6432A5BAB980069D5FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FFEB5A352A56A7D900E8BDA6 /* Build configuration list for PBXNativeTarget "bearChat" */ = {
+		BF31D6442A5BAB980069D5FF /* Build configuration list for PBXNativeTarget "BeerChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FFEB5A362A56A7D900E8BDA6 /* Debug */,
-				FFEB5A372A56A7D900E8BDA6 /* Release */,
+				BF31D6452A5BAB980069D5FF /* Debug */,
+				BF31D6462A5BAB980069D5FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FFEB5A1F2A56A7D800E8BDA6 /* Project object */;
+	rootObject = BF31D62E2A5BAB970069D5FF /* Project object */;
 }

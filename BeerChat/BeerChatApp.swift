@@ -1,14 +1,14 @@
 //
-//  bearChatApp.swift
-//  bearChat
+//  BeerChatApp.swift
+//  BeerChat
 //
-//  Created by apple on 2023/07/06.
+//  Created by 허준혁 on 2023/07/10.
 //
 
 import SwiftUI
 
 @main
-struct bearChatApp: App {
+struct BeerChatApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
