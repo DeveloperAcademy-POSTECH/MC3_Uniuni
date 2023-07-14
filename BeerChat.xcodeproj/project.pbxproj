@@ -10,7 +10,10 @@
 		BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */; };
 		BF31D63C2A5BAB970069D5FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D63B2A5BAB970069D5FF /* ContentView.swift */; };
 		BF31D63E2A5BAB980069D5FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF31D63D2A5BAB980069D5FF /* Assets.xcassets */; };
-		BF31D6412A5BAB980069D5FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF31D6402A5BAB980069D5FF /* Preview Assets.xcassets */; };
+		BFBD7A132A60D02A00A3FC55 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A122A60D02A00A3FC55 /* FirebaseAuth */; };
+		BFBD7A152A60D02A00A3FC55 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A142A60D02A00A3FC55 /* FirebaseFirestore */; };
+		BFBD7A172A60D02A00A3FC55 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A162A60D02A00A3FC55 /* FirebaseFirestoreSwift */; };
+		BFBD7A192A60D02A00A3FC55 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A182A60D02A00A3FC55 /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +21,6 @@
 		BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerChatApp.swift; sourceTree = "<group>"; };
 		BF31D63B2A5BAB970069D5FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BF31D63D2A5BAB980069D5FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BF31D6402A5BAB980069D5FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +28,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFBD7A192A60D02A00A3FC55 /* FirebaseMessaging in Frameworks */,
+				BFBD7A132A60D02A00A3FC55 /* FirebaseAuth in Frameworks */,
+				BFBD7A152A60D02A00A3FC55 /* FirebaseFirestore in Frameworks */,
+				BFBD7A172A60D02A00A3FC55 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,20 +57,35 @@
 		BF31D6382A5BAB970069D5FF /* BeerChat */ = {
 			isa = PBXGroup;
 			children = (
-				BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */,
-				BF31D63B2A5BAB970069D5FF /* ContentView.swift */,
-				BF31D63D2A5BAB980069D5FF /* Assets.xcassets */,
-				BF31D63F2A5BAB980069D5FF /* Preview Content */,
+				BFBD7A1F2A60F5F400A3FC55 /* Resources */,
+				BFBD7A1D2A60F5E400A3FC55 /* System */,
+				BFBD7A1C2A60F5D400A3FC55 /* Views */,
 			);
 			path = BeerChat;
 			sourceTree = "<group>";
 		};
-		BF31D63F2A5BAB980069D5FF /* Preview Content */ = {
+		BFBD7A1C2A60F5D400A3FC55 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BF31D6402A5BAB980069D5FF /* Preview Assets.xcassets */,
+				BF31D63B2A5BAB970069D5FF /* ContentView.swift */,
 			);
-			path = "Preview Content";
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BFBD7A1D2A60F5E400A3FC55 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		BFBD7A1F2A60F5F400A3FC55 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BF31D63D2A5BAB980069D5FF /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +105,12 @@
 			dependencies = (
 			);
 			name = BeerChat;
+			packageProductDependencies = (
+				BFBD7A122A60D02A00A3FC55 /* FirebaseAuth */,
+				BFBD7A142A60D02A00A3FC55 /* FirebaseFirestore */,
+				BFBD7A162A60D02A00A3FC55 /* FirebaseFirestoreSwift */,
+				BFBD7A182A60D02A00A3FC55 /* FirebaseMessaging */,
+			);
 			productName = BeerChat;
 			productReference = BF31D6362A5BAB970069D5FF /* BeerChat.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +139,9 @@
 				Base,
 			);
 			mainGroup = BF31D62D2A5BAB970069D5FF;
+			packageReferences = (
+				BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BF31D6372A5BAB970069D5FF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,7 +156,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF31D6412A5BAB980069D5FF /* Preview Assets.xcassets in Resources */,
 				BF31D63E2A5BAB980069D5FF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +391,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BFBD7A122A60D02A00A3FC55 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		BFBD7A142A60D02A00A3FC55 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		BFBD7A162A60D02A00A3FC55 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		BFBD7A182A60D02A00A3FC55 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF31D62E2A5BAB970069D5FF /* Project object */;
 }
