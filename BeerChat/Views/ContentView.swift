@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var pageManager = PageManager.shared
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        switch pageManager.currentPage {
+        case .splash:
+            SplashView()
+        case .entry:
+            EntryView()
+        case .keywordSelection:
+            KeywordSelectionView()
+        case .main:
+            MainView()
         }
-        .padding()
     }
 }
 
