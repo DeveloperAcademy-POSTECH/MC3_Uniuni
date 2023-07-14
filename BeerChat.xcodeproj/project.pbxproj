@@ -26,6 +26,7 @@
 		BFBD7A3A2A619C7200A3FC55 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A392A619C7200A3FC55 /* MainView.swift */; };
 		BFBD7A452A61B39E00A3FC55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFBD7A442A61B39E00A3FC55 /* GoogleService-Info.plist */; };
 		BFBD7A482A61BD3600A3FC55 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A472A61BD3600A3FC55 /* FirebaseAnalytics */; };
+		BFBD7A4C2A61BF9000A3FC55 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		BFBD7A372A61104900A3FC55 /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
 		BFBD7A392A619C7200A3FC55 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BFBD7A442A61B39E00A3FC55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				BFBD7A312A610E6E00A3FC55 /* PageManager.swift */,
+				BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				BFBD7A282A60F68800A3FC55 /* ProfileView.swift in Sources */,
 				BFBD7A3A2A619C7200A3FC55 /* MainView.swift in Sources */,
 				BF31D63C2A5BAB970069D5FF /* ContentView.swift in Sources */,
+				BFBD7A4C2A61BF9000A3FC55 /* UserManager.swift in Sources */,
 				BFBD7A2A2A60F68E00A3FC55 /* ChatView.swift in Sources */,
 				BFBD7A302A60F6A800A3FC55 /* CustomButton.swift in Sources */,
 				BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */,
