@@ -1,430 +1,502 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 56;
-	objects = {
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 56;
+    objects = {
 
 /* Begin PBXBuildFile section */
-		BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */; };
-		BF31D63C2A5BAB970069D5FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D63B2A5BAB970069D5FF /* ContentView.swift */; };
-		BF31D63E2A5BAB980069D5FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF31D63D2A5BAB980069D5FF /* Assets.xcassets */; };
-		BFBD7A132A60D02A00A3FC55 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A122A60D02A00A3FC55 /* FirebaseAuth */; };
-		BFBD7A152A60D02A00A3FC55 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A142A60D02A00A3FC55 /* FirebaseFirestore */; };
-		BFBD7A172A60D02A00A3FC55 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A162A60D02A00A3FC55 /* FirebaseFirestoreSwift */; };
-		BFBD7A192A60D02A00A3FC55 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A182A60D02A00A3FC55 /* FirebaseMessaging */; };
+        BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */; };
+        BF31D63C2A5BAB970069D5FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D63B2A5BAB970069D5FF /* ContentView.swift */; };
+        BF31D63E2A5BAB980069D5FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF31D63D2A5BAB980069D5FF /* Assets.xcassets */; };
+        BFBD7A132A60D02A00A3FC55 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A122A60D02A00A3FC55 /* FirebaseAuth */; };
+        BFBD7A152A60D02A00A3FC55 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A142A60D02A00A3FC55 /* FirebaseFirestore */; };
+        BFBD7A172A60D02A00A3FC55 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A162A60D02A00A3FC55 /* FirebaseFirestoreSwift */; };
+        BFBD7A192A60D02A00A3FC55 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A182A60D02A00A3FC55 /* FirebaseMessaging */; };
+        BFBD7A262A60F68200A3FC55 /* KeywordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A252A60F68200A3FC55 /* KeywordView.swift */; };
+        BFBD7A282A60F68800A3FC55 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A272A60F68800A3FC55 /* ProfileView.swift */; };
+        BFBD7A2A2A60F68E00A3FC55 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A292A60F68E00A3FC55 /* ChatView.swift */; };
+        BFBD7A2C2A60F69500A3FC55 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A2B2A60F69500A3FC55 /* ChatListView.swift */; };
+        BFBD7A2E2A60F69E00A3FC55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A2D2A60F69E00A3FC55 /* User.swift */; };
+        BFBD7A302A60F6A800A3FC55 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A2F2A60F6A800A3FC55 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BF31D6362A5BAB970069D5FF /* BeerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerChatApp.swift; sourceTree = "<group>"; };
-		BF31D63B2A5BAB970069D5FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		BF31D63D2A5BAB980069D5FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+        BF31D6362A5BAB970069D5FF /* BeerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerChatApp.swift; sourceTree = "<group>"; };
+        BF31D63B2A5BAB970069D5FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+        BF31D63D2A5BAB980069D5FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+        BFBD7A252A60F68200A3FC55 /* KeywordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordView.swift; sourceTree = "<group>"; };
+        BFBD7A272A60F68800A3FC55 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+        BFBD7A292A60F68E00A3FC55 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+        BFBD7A2B2A60F69500A3FC55 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
+        BFBD7A2D2A60F69E00A3FC55 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+        BFBD7A2F2A60F6A800A3FC55 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BF31D6332A5BAB970069D5FF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BFBD7A192A60D02A00A3FC55 /* FirebaseMessaging in Frameworks */,
-				BFBD7A132A60D02A00A3FC55 /* FirebaseAuth in Frameworks */,
-				BFBD7A152A60D02A00A3FC55 /* FirebaseFirestore in Frameworks */,
-				BFBD7A172A60D02A00A3FC55 /* FirebaseFirestoreSwift in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        BF31D6332A5BAB970069D5FF /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                BFBD7A192A60D02A00A3FC55 /* FirebaseMessaging in Frameworks */,
+                BFBD7A132A60D02A00A3FC55 /* FirebaseAuth in Frameworks */,
+                BFBD7A152A60D02A00A3FC55 /* FirebaseFirestore in Frameworks */,
+                BFBD7A172A60D02A00A3FC55 /* FirebaseFirestoreSwift in Frameworks */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BF31D62D2A5BAB970069D5FF = {
-			isa = PBXGroup;
-			children = (
-				BF31D6382A5BAB970069D5FF /* BeerChat */,
-				BF31D6372A5BAB970069D5FF /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		BF31D6372A5BAB970069D5FF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BF31D6362A5BAB970069D5FF /* BeerChat.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		BF31D6382A5BAB970069D5FF /* BeerChat */ = {
-			isa = PBXGroup;
-			children = (
-				BFBD7A1F2A60F5F400A3FC55 /* Resources */,
-				BFBD7A1D2A60F5E400A3FC55 /* System */,
-				BFBD7A1C2A60F5D400A3FC55 /* Views */,
-			);
-			path = BeerChat;
-			sourceTree = "<group>";
-		};
-		BFBD7A1C2A60F5D400A3FC55 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				BF31D63B2A5BAB970069D5FF /* ContentView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		BFBD7A1D2A60F5E400A3FC55 /* System */ = {
-			isa = PBXGroup;
-			children = (
-				BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */,
-			);
-			path = System;
-			sourceTree = "<group>";
-		};
-		BFBD7A1F2A60F5F400A3FC55 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				BF31D63D2A5BAB980069D5FF /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
+        BF31D62D2A5BAB970069D5FF = {
+            isa = PBXGroup;
+            children = (
+                BF31D6382A5BAB970069D5FF /* BeerChat */,
+                BF31D6372A5BAB970069D5FF /* Products */,
+            );
+            sourceTree = "<group>";
+        };
+        BF31D6372A5BAB970069D5FF /* Products */ = {
+            isa = PBXGroup;
+            children = (
+                BF31D6362A5BAB970069D5FF /* BeerChat.app */,
+            );
+            name = Products;
+            sourceTree = "<group>";
+        };
+        BF31D6382A5BAB970069D5FF /* BeerChat */ = {
+            isa = PBXGroup;
+            children = (
+                BFBD7A1E2A60F5EC00A3FC55 /* Models */,
+                BFBD7A1F2A60F5F400A3FC55 /* Resources */,
+                BFBD7A1D2A60F5E400A3FC55 /* System */,
+                BFBD7A1C2A60F5D400A3FC55 /* Views */,
+            );
+            path = BeerChat;
+            sourceTree = "<group>";
+        };
+        BFBD7A1C2A60F5D400A3FC55 /* Views */ = {
+            isa = PBXGroup;
+            children = (
+                BFBD7A242A60F66A00A3FC55 /* ChatList */,
+                BFBD7A232A60F66200A3FC55 /* Chat */,
+                BFBD7A222A60F63F00A3FC55 /* Profiles */,
+                BFBD7A212A60F63600A3FC55 /* Keywords */,
+                BFBD7A202A60F62F00A3FC55 /* Components */,
+                BF31D63B2A5BAB970069D5FF /* ContentView.swift */,
+            );
+            path = Views;
+            sourceTree = "<group>";
+        };
+        BFBD7A1D2A60F5E400A3FC55 /* System */ = {
+            isa = PBXGroup;
+            children = (
+                BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */,
+            );
+            path = System;
+            sourceTree = "<group>";
+        };
+        BFBD7A1E2A60F5EC00A3FC55 /* Models */ = {
+            isa = PBXGroup;
+            children = (
+                BFBD7A2D2A60F69E00A3FC55 /* User.swift */,
+            );
+            path = Models;
+            sourceTree = "<group>";
+        };
+        BFBD7A1F2A60F5F400A3FC55 /* Resources */ = {
+            isa = PBXGroup;
+            children = (
+                BF31D63D2A5BAB980069D5FF /* Assets.xcassets */,
+            );
+            path = Resources;
+            sourceTree = "<group>";
+        };
+        BFBD7A202A60F62F00A3FC55 /* Components */ = {
+            isa = PBXGroup;
+            children = (
+                BFBD7A2F2A60F6A800A3FC55 /* CustomButton.swift */,
+            );
+            path = Components;
+            sourceTree = "<group>";
+        };
+        BFBD7A212A60F63600A3FC55 /* Keywords */ = {
+            isa = PBXGroup;
+            children = (
+                BFBD7A252A60F68200A3FC55 /* KeywordView.swift */,
+            );
+            path = Keywords;
+            sourceTree = "<group>";
+        };
+        BFBD7A222A60F63F00A3FC55 /* Profiles */ = {
+            isa = PBXGroup;
+            children = (
+                BFBD7A272A60F68800A3FC55 /* ProfileView.swift */,
+            );
+            path = Profiles;
+            sourceTree = "<group>";
+        };
+        BFBD7A232A60F66200A3FC55 /* Chat */ = {
+            isa = PBXGroup;
+            children = (
+                BFBD7A292A60F68E00A3FC55 /* ChatView.swift */,
+            );
+            path = Chat;
+            sourceTree = "<group>";
+        };
+        BFBD7A242A60F66A00A3FC55 /* ChatList */ = {
+            isa = PBXGroup;
+            children = (
+                BFBD7A2B2A60F69500A3FC55 /* ChatListView.swift */,
+            );
+            path = ChatList;
+            sourceTree = "<group>";
+        };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BF31D6352A5BAB970069D5FF /* BeerChat */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF31D6442A5BAB980069D5FF /* Build configuration list for PBXNativeTarget "BeerChat" */;
-			buildPhases = (
-				BF31D6472A5BABE50069D5FF /* SwiftLint */,
-				BF31D6322A5BAB970069D5FF /* Sources */,
-				BF31D6332A5BAB970069D5FF /* Frameworks */,
-				BF31D6342A5BAB970069D5FF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = BeerChat;
-			packageProductDependencies = (
-				BFBD7A122A60D02A00A3FC55 /* FirebaseAuth */,
-				BFBD7A142A60D02A00A3FC55 /* FirebaseFirestore */,
-				BFBD7A162A60D02A00A3FC55 /* FirebaseFirestoreSwift */,
-				BFBD7A182A60D02A00A3FC55 /* FirebaseMessaging */,
-			);
-			productName = BeerChat;
-			productReference = BF31D6362A5BAB970069D5FF /* BeerChat.app */;
-			productType = "com.apple.product-type.application";
-		};
+        BF31D6352A5BAB970069D5FF /* BeerChat */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = BF31D6442A5BAB980069D5FF /* Build configuration list for PBXNativeTarget "BeerChat" */;
+            buildPhases = (
+                BF31D6472A5BABE50069D5FF /* SwiftLint */,
+                BF31D6322A5BAB970069D5FF /* Sources */,
+                BF31D6332A5BAB970069D5FF /* Frameworks */,
+                BF31D6342A5BAB970069D5FF /* Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+            );
+            name = BeerChat;
+            packageProductDependencies = (
+                BFBD7A122A60D02A00A3FC55 /* FirebaseAuth */,
+                BFBD7A142A60D02A00A3FC55 /* FirebaseFirestore */,
+                BFBD7A162A60D02A00A3FC55 /* FirebaseFirestoreSwift */,
+                BFBD7A182A60D02A00A3FC55 /* FirebaseMessaging */,
+            );
+            productName = BeerChat;
+            productReference = BF31D6362A5BAB970069D5FF /* BeerChat.app */;
+            productType = "com.apple.product-type.application";
+        };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BF31D62E2A5BAB970069D5FF /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
-				TargetAttributes = {
-					BF31D6352A5BAB970069D5FF = {
-						CreatedOnToolsVersion = 14.2;
-					};
-				};
-			};
-			buildConfigurationList = BF31D6312A5BAB970069D5FF /* Build configuration list for PBXProject "BeerChat" */;
-			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = BF31D62D2A5BAB970069D5FF;
-			packageReferences = (
-				BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-			);
-			productRefGroup = BF31D6372A5BAB970069D5FF /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				BF31D6352A5BAB970069D5FF /* BeerChat */,
-			);
-		};
+        BF31D62E2A5BAB970069D5FF /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                BuildIndependentTargetsInParallel = 1;
+                LastSwiftUpdateCheck = 1420;
+                LastUpgradeCheck = 1420;
+                TargetAttributes = {
+                    BF31D6352A5BAB970069D5FF = {
+                        CreatedOnToolsVersion = 14.2;
+                    };
+                };
+            };
+            buildConfigurationList = BF31D6312A5BAB970069D5FF /* Build configuration list for PBXProject "BeerChat" */;
+            compatibilityVersion = "Xcode 14.0";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+                Base,
+            );
+            mainGroup = BF31D62D2A5BAB970069D5FF;
+            packageReferences = (
+                BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+            );
+            productRefGroup = BF31D6372A5BAB970069D5FF /* Products */;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (
+                BF31D6352A5BAB970069D5FF /* BeerChat */,
+            );
+        };
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BF31D6342A5BAB970069D5FF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF31D63E2A5BAB980069D5FF /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        BF31D6342A5BAB970069D5FF /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                BF31D63E2A5BAB980069D5FF /* Assets.xcassets in Resources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BF31D6472A5BABE50069D5FF /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
+        BF31D6472A5BABE50069D5FF /* SwiftLint */ = {
+            isa = PBXShellScriptBuildPhase;
+            alwaysOutOfDate = 1;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            inputFileListPaths = (
+            );
+            inputPaths = (
+            );
+            name = SwiftLint;
+            outputFileListPaths = (
+            );
+            outputPaths = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+            shellPath = /bin/sh;
+            shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+        };
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BF31D6322A5BAB970069D5FF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF31D63C2A5BAB970069D5FF /* ContentView.swift in Sources */,
-				BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        BF31D6322A5BAB970069D5FF /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                BFBD7A282A60F68800A3FC55 /* ProfileView.swift in Sources */,
+                BF31D63C2A5BAB970069D5FF /* ContentView.swift in Sources */,
+                BFBD7A2A2A60F68E00A3FC55 /* ChatView.swift in Sources */,
+                BFBD7A302A60F6A800A3FC55 /* CustomButton.swift in Sources */,
+                BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */,
+                BFBD7A2C2A60F69500A3FC55 /* ChatListView.swift in Sources */,
+                BFBD7A262A60F68200A3FC55 /* KeywordView.swift in Sources */,
+                BFBD7A2E2A60F69E00A3FC55 /* User.swift in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		BF31D6422A5BAB980069D5FF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		BF31D6432A5BAB980069D5FF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		BF31D6452A5BAB980069D5FF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BeerChat/Preview Content\"";
-				DEVELOPMENT_TEAM = DD8VYBJ73D;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhunhe.BeerChat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		BF31D6462A5BAB980069D5FF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BeerChat/Preview Content\"";
-				DEVELOPMENT_TEAM = DD8VYBJ73D;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zhunhe.BeerChat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
+        BF31D6422A5BAB980069D5FF /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_ENABLE_OBJC_WEAK = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = dwarf;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                ENABLE_TESTABILITY = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_DYNAMIC_NO_PIC = NO;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_OPTIMIZATION_LEVEL = 0;
+                GCC_PREPROCESSOR_DEFINITIONS = (
+                    "DEBUG=1",
+                    "$(inherited)",
+                );
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+                MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+                MTL_FAST_MATH = YES;
+                ONLY_ACTIVE_ARCH = YES;
+                SDKROOT = iphoneos;
+                SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+            };
+            name = Debug;
+        };
+        BF31D6432A5BAB980069D5FF /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_ENABLE_OBJC_WEAK = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+                ENABLE_NS_ASSERTIONS = NO;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+                MTL_ENABLE_DEBUG_INFO = NO;
+                MTL_FAST_MATH = YES;
+                SDKROOT = iphoneos;
+                SWIFT_COMPILATION_MODE = wholemodule;
+                SWIFT_OPTIMIZATION_LEVEL = "-O";
+                VALIDATE_PRODUCT = YES;
+            };
+            name = Release;
+        };
+        BF31D6452A5BAB980069D5FF /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                DEVELOPMENT_ASSET_PATHS = "\"BeerChat/Preview Content\"";
+                DEVELOPMENT_TEAM = DD8VYBJ73D;
+                ENABLE_PREVIEWS = YES;
+                GENERATE_INFOPLIST_FILE = YES;
+                INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+                INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+                INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                );
+                MARKETING_VERSION = 1.0;
+                PRODUCT_BUNDLE_IDENTIFIER = com.zhunhe.BeerChat;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_EMIT_LOC_STRINGS = YES;
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+            };
+            name = Debug;
+        };
+        BF31D6462A5BAB980069D5FF /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+                CODE_SIGN_STYLE = Automatic;
+                CURRENT_PROJECT_VERSION = 1;
+                DEVELOPMENT_ASSET_PATHS = "\"BeerChat/Preview Content\"";
+                DEVELOPMENT_TEAM = DD8VYBJ73D;
+                ENABLE_PREVIEWS = YES;
+                GENERATE_INFOPLIST_FILE = YES;
+                INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+                INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+                INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+                INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+                LD_RUNPATH_SEARCH_PATHS = (
+                    "$(inherited)",
+                    "@executable_path/Frameworks",
+                );
+                MARKETING_VERSION = 1.0;
+                PRODUCT_BUNDLE_IDENTIFIER = com.zhunhe.BeerChat;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SWIFT_EMIT_LOC_STRINGS = YES;
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+            };
+            name = Release;
+        };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BF31D6312A5BAB970069D5FF /* Build configuration list for PBXProject "BeerChat" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF31D6422A5BAB980069D5FF /* Debug */,
-				BF31D6432A5BAB980069D5FF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BF31D6442A5BAB980069D5FF /* Build configuration list for PBXNativeTarget "BeerChat" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF31D6452A5BAB980069D5FF /* Debug */,
-				BF31D6462A5BAB980069D5FF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
+        BF31D6312A5BAB970069D5FF /* Build configuration list for PBXProject "BeerChat" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                BF31D6422A5BAB980069D5FF /* Debug */,
+                BF31D6432A5BAB980069D5FF /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        BF31D6442A5BAB980069D5FF /* Build configuration list for PBXNativeTarget "BeerChat" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                BF31D6452A5BAB980069D5FF /* Debug */,
+                BF31D6462A5BAB980069D5FF /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
+        BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+            isa = XCRemoteSwiftPackageReference;
+            repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+            requirement = {
+                kind = upToNextMajorVersion;
+                minimumVersion = 10.0.0;
+            };
+        };
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BFBD7A122A60D02A00A3FC55 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		BFBD7A142A60D02A00A3FC55 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		BFBD7A162A60D02A00A3FC55 /* FirebaseFirestoreSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestoreSwift;
-		};
-		BFBD7A182A60D02A00A3FC55 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
-		};
+        BFBD7A122A60D02A00A3FC55 /* FirebaseAuth */ = {
+            isa = XCSwiftPackageProductDependency;
+            package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+            productName = FirebaseAuth;
+        };
+        BFBD7A142A60D02A00A3FC55 /* FirebaseFirestore */ = {
+            isa = XCSwiftPackageProductDependency;
+            package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+            productName = FirebaseFirestore;
+        };
+        BFBD7A162A60D02A00A3FC55 /* FirebaseFirestoreSwift */ = {
+            isa = XCSwiftPackageProductDependency;
+            package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+            productName = FirebaseFirestoreSwift;
+        };
+        BFBD7A182A60D02A00A3FC55 /* FirebaseMessaging */ = {
+            isa = XCSwiftPackageProductDependency;
+            package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+            productName = FirebaseMessaging;
+        };
 /* End XCSwiftPackageProductDependency section */
-	};
-	rootObject = BF31D62E2A5BAB970069D5FF /* Project object */;
+    };
+    rootObject = BF31D62E2A5BAB970069D5FF /* Project object */;
 }
