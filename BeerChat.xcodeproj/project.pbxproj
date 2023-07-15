@@ -26,7 +26,6 @@
 		BFBD7A482A61BD3600A3FC55 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A472A61BD3600A3FC55 /* FirebaseAnalytics */; };
 		BFBD7A4C2A61BF9000A3FC55 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */; };
 		BFBD7A4F2A61D45500A3FC55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFBD7A4E2A61D45500A3FC55 /* GoogleService-Info.plist */; };
-		BFBD7A532A628A9F00A3FC55 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A522A628A9F00A3FC55 /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +55,6 @@
 			files = (
 				BFBD7A132A60D02A00A3FC55 /* FirebaseAuth in Frameworks */,
 				BFBD7A152A60D02A00A3FC55 /* FirebaseFirestore in Frameworks */,
-				BFBD7A532A628A9F00A3FC55 /* FirebaseMessaging in Frameworks */,
 				BFBD7A482A61BD3600A3FC55 /* FirebaseAnalytics in Frameworks */,
 				BFBD7A172A60D02A00A3FC55 /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -238,7 +236,6 @@
 				BFBD7A142A60D02A00A3FC55 /* FirebaseFirestore */,
 				BFBD7A162A60D02A00A3FC55 /* FirebaseFirestoreSwift */,
 				BFBD7A472A61BD3600A3FC55 /* FirebaseAnalytics */,
-				BFBD7A522A628A9F00A3FC55 /* FirebaseMessaging */,
 			);
 			productName = BeerChat;
 			productReference = BF31D6362A5BAB970069D5FF /* BeerChat.app */;
@@ -566,11 +563,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
-		};
-		BFBD7A522A628A9F00A3FC55 /* FirebaseMessaging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BFBD7A112A60D02A00A3FC55 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseMessaging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
