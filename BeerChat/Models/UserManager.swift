@@ -72,16 +72,27 @@ final class UserManager {
         }
     }
 
-    func updateUser(user: User) {
+    func updateUser(user: User, completion: @escaping (Bool) -> Void) {
         if let userId = user.userId {
             do {
                 let data = try Firestore.Encoder().encode(user)
-                database.collection("user").document(userId).setData(data)
+                database.collection("user").document(userId).setData(data) { error in
+                    if let error = error {
+                        print("Error updating user: \(error.localizedDescription)")
+                        completion(false)
+                    } else {
+                        self.fetchCurrentUser(userId: userId) { _ in
+                            completion(true)
+                        }
+                    }
+                }
             } catch {
                 print("Error updating user: \(error.localizedDescription)")
+                completion(false)
             }
         } else {
             print("Error updating user: userId does not exist")
+            completion(false)
         }
     }
 
