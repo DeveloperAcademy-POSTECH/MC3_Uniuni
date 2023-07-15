@@ -28,7 +28,7 @@ struct EntryView: View {
             }, label: {
                 Text("로그인 이메일 보내기")
                     .padding()
-                    .background(Color.blue)
+                    .background(.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
             })
@@ -36,11 +36,12 @@ struct EntryView: View {
                 TextField("학교", text: $afiliation)
                 TextField("전공", text: $major)
                 Picker("", selection: $yearOfAdmission) {
-                            ForEach(2000...2020, id: \.self) {
-                                Text(String($0))
-                            }
-                        }
-                        .pickerStyle(InlinePickerStyle())
+                    let currentYear = Calendar.current.component(.year, from: Date())
+                    ForEach(2010...currentYear, id: \.self) {
+                        Text(String($0))
+                    }
+                }
+                .pickerStyle(InlinePickerStyle())
                 Button("회원가입", action: {
                     let user = User(affiliation: afiliation, major: major, yearOfAdmission: yearOfAdmission)
                     UserManager.shared.addUser(documentId: userid, user: user) { isSuccess in
@@ -83,9 +84,7 @@ struct EntryView: View {
         actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
         Auth.auth().sendSignInLink(toEmail: email, actionCodeSettings: actionCodeSettings) { error in
             if let error = error {
-                print("로그인 이메일 보내기 실패:", error.localizedDescription)
-            } else {
-                print("로그인 이메일 보냄")
+                print("Error sending email:", error.localizedDescription)
             }
         }
     }
