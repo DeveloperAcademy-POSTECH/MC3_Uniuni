@@ -9,7 +9,16 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text("ProfileView")
+        VStack {
+            if let user = UserManager.shared.currentUser, let uid = user.userId {
+                Text(uid)
+                Text(user.affiliation)
+                Text(user.major)
+                Text(user.yearOfAdmission.description)
+                Text(user.keywords.description)
+            }
+            Text("ProfileView")
+        }
     }
 }
 
