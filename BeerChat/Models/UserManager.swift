@@ -53,12 +53,22 @@ final class UserManager {
 
     @Published private(set) var currentUser: User?
 
-    func addUser(documentId: String, user: User) {
+    func addUser(documentId: String, user: User, completion: @escaping (Bool) -> Void) {
         do {
             let data = try Firestore.Encoder().encode(user)
-            database.collection("user").document(documentId).setData(data)
+            database.collection("user").document(documentId).setData(data) { error in
+                if let error = error {
+                    print("Error adding user: \(error.localizedDescription)")
+                    completion(false)
+                } else {
+                    self.fetchCurrentUser(userId: documentId) { _ in
+                        completion(true)
+                    }
+                }
+            }
         } catch {
             print("Error adding user: \(error.localizedDescription)")
+            completion(false)
         }
     }
 
@@ -75,10 +85,11 @@ final class UserManager {
         }
     }
 
-    func fetchCurrentUser(userId: String) {
+    func fetchCurrentUser(userId: String, completion: @escaping (User?) -> Void) {
         database.collection("user").document(userId).getDocument { (document, error) in
             if error != nil {
                 print("Error reading the document \(error.debugDescription)")
+                completion(nil)
                 return
             }
             if let document = document, document.exists {
@@ -87,6 +98,7 @@ final class UserManager {
                 self.currentUser = nil
                 print("User Document does not exist")
             }
+            completion(self.currentUser)
         }
     }
 }
