@@ -35,6 +35,14 @@ struct User: Codable {
         yearOfAdmission = try container.decode(Int.self, forKey: .yearOfAdmission)
         keywords = try container.decode([String].self, forKey: .keywords)
     }
+
+    init(affiliation: String, major: String, yearOfAdmission: Int) {
+        self.iconIndex = Int.random(in: 0...4)
+        self.affiliation = affiliation
+        self.major = major
+        self.yearOfAdmission = yearOfAdmission
+        self.keywords = [""]
+    }
 }
 
 final class UserManager {
@@ -45,10 +53,10 @@ final class UserManager {
 
     @Published private(set) var currentUser: User?
 
-    func addUser(user: User) {
+    func addUser(documentId: String, user: User) {
         do {
             let data = try Firestore.Encoder().encode(user)
-            database.collection("user").addDocument(data: data)
+            database.collection("user").document(documentId).setData(data)
         } catch {
             print("Error adding user: \(error.localizedDescription)")
         }
@@ -76,6 +84,7 @@ final class UserManager {
             if let document = document, document.exists {
                 self.currentUser = try? document.data(as: User.self)
             } else {
+                self.currentUser = nil
                 print("User Document does not exist")
             }
         }
