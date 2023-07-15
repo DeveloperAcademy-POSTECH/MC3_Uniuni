@@ -43,8 +43,14 @@ struct EntryView: View {
                         .pickerStyle(InlinePickerStyle())
                 Button("회원가입", action: {
                     let user = User(affiliation: afiliation, major: major, yearOfAdmission: yearOfAdmission)
-                    UserManager.shared.addUser(documentId: userid, user: user)
-                    PageManager.shared.currentPage = .keywordSelection
+                    UserManager.shared.addUser(documentId: userid, user: user) { isSuccess in
+                        if isSuccess {
+                            print("회원가입 성공")
+                            PageManager.shared.currentPage = .keywordSelection
+                        } else {
+                            print("회원가입 실패")
+                        }
+                    }
                 })
             }
         }
@@ -55,13 +61,13 @@ struct EntryView: View {
                         print(error)
                     } else {
                         if let uid = user?.user.uid {
-                            UserManager.shared.fetchCurrentUser(userId: uid)
-                            // [Need to Fix] currentUser 가져오기를 기다려주지 않음.
-                            if UserManager.shared.currentUser == nil {
-                                isEmailVerified = true
-                                self.userid = uid
-                            } else {
-                                PageManager.shared.currentPage = .main
+                            UserManager.shared.fetchCurrentUser(userId: uid) { currentUser in
+                                if currentUser == nil {
+                                    isEmailVerified = true
+                                    self.userid = uid
+                                } else {
+                                    PageManager.shared.currentPage = .main
+                                }
                             }
                         }
                     }
