@@ -9,7 +9,8 @@ import SwiftUI
 
 struct KeywordListVIew: View {
     @State var currentKeyword: Keyword?
-    @State var seletedKewords: Set<String> = []
+    @Binding var seletedKewords: Set<String>
+    
     var body: some View {
         ScrollView {
             ForEach(Keyword.allCases, id: \.self) { keyword in
@@ -28,14 +29,7 @@ struct KeywordListVIew: View {
                         currentKeyword = keyword
                     }
                     if currentKeyword == keyword {
-                        ForEach(keyword.detail, id: \.self) { semiKeyword in
-                            Button(action: { seletedKewords.insert(semiKeyword) }) {
-                                Text(semiKeyword)
-                                    .padding()
-                                    .background(Color(cgColor: UIColor.lightGray.cgColor))
-                                    .cornerRadius(10)
-                            }
-                        }
+                        KeywordGridView(keyword: keyword.detail, seletedKewords: $seletedKewords)
                     }
                 }
             }
@@ -46,6 +40,6 @@ struct KeywordListVIew: View {
 
 struct KeywordListVIew_Previews: PreviewProvider {
     static var previews: some View {
-        KeywordListVIew()
+        KeywordListVIew(seletedKewords: .constant([]))
     }
 }

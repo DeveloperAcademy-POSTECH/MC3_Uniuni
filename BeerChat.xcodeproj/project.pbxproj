@@ -27,6 +27,7 @@
 		BFBD7A4C2A61BF9000A3FC55 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */; };
 		FFB0EDF32A6411590034DE4F /* KeywordListVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0EDF22A6411590034DE4F /* KeywordListVIew.swift */; };
 		FFB0EDF52A6411820034DE4F /* Keywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0EDF42A6411820034DE4F /* Keywords.swift */; };
+		FFB0EDF72A6421470034DE4F /* keywordGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0EDF62A6421470034DE4F /* keywordGridView.swift */; };
 		FFDA9EB52A6406EC008CB05E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFDA9EB42A6406EC008CB05E /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		BFBD7A4D2A61CCDB00A3FC55 /* BeerChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeerChat.entitlements; sourceTree = "<group>"; };
 		FFB0EDF22A6411590034DE4F /* KeywordListVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordListVIew.swift; sourceTree = "<group>"; };
 		FFB0EDF42A6411820034DE4F /* Keywords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keywords.swift; sourceTree = "<group>"; };
+		FFB0EDF62A6421470034DE4F /* keywordGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keywordGridView.swift; sourceTree = "<group>"; };
 		FFDA9EB42A6406EC008CB05E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 			children = (
 				BFBD7A252A60F68200A3FC55 /* KeywordSelectionView.swift */,
 				FFB0EDF22A6411590034DE4F /* KeywordListVIew.swift */,
+				FFB0EDF62A6421470034DE4F /* keywordGridView.swift */,
 			);
 			path = KeywordSelection;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				FFB0EDF52A6411820034DE4F /* Keywords.swift in Sources */,
 				BFBD7A4C2A61BF9000A3FC55 /* UserManager.swift in Sources */,
 				FFB0EDF32A6411590034DE4F /* KeywordListVIew.swift in Sources */,
+				FFB0EDF72A6421470034DE4F /* keywordGridView.swift in Sources */,
 				BFBD7A2A2A60F68E00A3FC55 /* ChatView.swift in Sources */,
 				BFBD7A302A60F6A800A3FC55 /* CustomButton.swift in Sources */,
 				BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */,

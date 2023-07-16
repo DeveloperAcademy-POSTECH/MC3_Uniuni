@@ -8,13 +8,27 @@
 import SwiftUI
 
 struct KeywordSelectionView: View {
+    @State var seletedKewords: Set<String> = []
+    
     var body: some View {
-        VStack {
-            Text("KeywordSelectionView")
-            Button("Next", action: {
+        VStack(alignment: .leading) {
+            Text("답변할\n키워드 선택")
+                .font(.largeTitle.weight(.bold))
+            KeywordListVIew(seletedKewords: $seletedKewords)
+            Spacer()
+            Button(action: {
                 PageManager.shared.currentPage = .main
-            })
+            }) {
+                Text("확인")
+                    .font(.title2.weight(.bold))
+                    .foregroundColor(Color.white)
+            }
+            .frame(height: 60)
+            .frame(maxWidth: .infinity)
+            .background(.gray)
+            .cornerRadius(11)
         }
+        .padding()
     }
 }
 
