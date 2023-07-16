@@ -9,22 +9,27 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        TabView {
-            MatchingView()
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Main")
-                }
-            ChatListView()
-                .tabItem {
-                    Image(systemName: "message.fill")
-                    Text("Chat")
-                }
-            ProfileView()
-                .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("My")
-                }
+        NavigationStack {
+            TabView {
+                MatchingView()
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("Main")
+                    }
+                ChatListView()
+                    .tabItem {
+                        Image(systemName: "message.fill")
+                        Text("Chat")
+                    }
+                ProfileView()
+                    .tabItem {
+                        Image(systemName: "person.fill")
+                        Text("My")
+                    }
+            }
+            .onAppear() {
+                UITabBar.appearance().backgroundColor = UIColor.white.withAlphaComponent(0.75)
+            }
         }
     }
 }

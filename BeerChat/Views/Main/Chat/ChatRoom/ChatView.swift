@@ -23,16 +23,16 @@ struct ChatView: View {
     var body: some View {
         VStack {
             // 채팅 메시지 표시
-            List(chatViewModel.messages, id: \.id) { message in
-                Text((message.uid == userId ? "나" : "상대방")+" : \(message.text)")
-            }
-            // 메시지 작성 필드
-            HStack {
-                TextField("메시지 입력", text: $chatViewModel.newMessageText)
-                Button("전송") {
-                    chatViewModel.sendMessage()
+            ScrollViewReader { proxy in
+                ScrollView {
+                    ForEach(chatViewModel.messages, id: \.id) { message in
+                        ChatBubble(message: message, userId: userId)
+                    }
                 }
             }
+
+            ChatField()
+                .environmentObject(chatViewModel)
         }
     }
 }

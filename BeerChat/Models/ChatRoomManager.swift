@@ -14,6 +14,8 @@ struct ChatRoom: Codable {
     var questioner: String
     var respondent: String
     var status: String
+    // TODO: Array Index로 변경하기
+    var keyword: String
     var recentMessage: Message?
     var recentMessageDocumentReference: DocumentReference?
 
@@ -22,6 +24,7 @@ struct ChatRoom: Codable {
         case questioner
         case respondent
         case status
+        case keyword
         case recentMessage
     }
 
@@ -31,21 +34,20 @@ struct ChatRoom: Codable {
         questioner = try container.decode(String.self, forKey: .questioner)
         respondent = try container.decode(String.self, forKey: .respondent)
         status = try container.decode(String.self, forKey: .status)
+        keyword = try container.decode(String.self, forKey: .keyword)
         recentMessageDocumentReference = try container.decode(DocumentReference.self, forKey: .recentMessage)
     }
-    
-    init(questioner: String, respondent: String, status: String, recentMessageDocumentReference: DocumentReference) {
+    init(questioner: String, respondent: String, status: String, keyword: String) {
         self.questioner = questioner
         self.respondent = respondent
         self.status = status
-        self.recentMessageDocumentReference = recentMessageDocumentReference
+        self.keyword = keyword
     }
 }
 
 class FirestoreManager: ObservableObject {
     private let database = Firestore.firestore()
     private var listener: ListenerRegistration?
-    
     @Published var chatRooms = [ChatRoom]()
     @Published var matchingUsers = [User]()
     @Published var userKeywords = [String]()
@@ -74,7 +76,6 @@ class FirestoreManager: ObservableObject {
                 }
             }
     }
-    
     func resetAllData() {
         self.chatRooms.removeAll()
         self.userKeywords.removeAll()
@@ -102,14 +103,14 @@ class FirestoreManager: ObservableObject {
             }
         }
     }
-//
-//    func addChatRoom(userId: String, partnerId: String, roomName: String) {
-//        let newChatRoom = ChatRoom(questioner: userId, respondent: partnerId, status: "pending", recentMessage: Message(uid: "temp", text: "temp", timestamp: Date()))
-//        do {
-//            let data = try Firestore.Encoder().encode(newChatRoom)
-//            _ = try database.collection("chatRoom").addDocument(data: data)
-//        } catch {
-//            print("메시지 전송 에러: \(error.localizedDescription)")
-//        }
-//    }
+
+    func addChatRoom(userId: String, partnerId: String, roomName: String) {
+        let newChatRoom = ChatRoom(questioner: userId, respondent: partnerId, status: "pending", keyword: "test")
+        do {
+            let data = try Firestore.Encoder().encode(newChatRoom)
+            _ = try database.collection("chatRoom").addDocument(data: data)
+        } catch {
+            print("메시지 전송 에러: \(error.localizedDescription)")
+        }
+    }
 }

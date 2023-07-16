@@ -71,14 +71,14 @@ class ChatViewModel: ObservableObject {
             }
     }
 
-    func sendMessage() {
+    func sendMessage(messageText: String) {
         let currentTime = Date()
-        let newMessage = Message(uid: userId, text: newMessageText, timestamp: currentTime)
+        let newMessage = Message(uid: userId, text: messageText, timestamp: currentTime)
         do {
             let data = try Firestore.Encoder().encode(newMessage)
             _ = try database.collection("chatRoom").document(self.roomId).collection("messages").addDocument(data: data)
             _ = try database.collection("chatRoom").document(self.roomId).updateData(["timestamp" : currentTime])
-            newMessageText = ""
+//            newMessageText = ""
         } catch {
             print("메시지 전송 에러: \(error.localizedDescription)")
         }
