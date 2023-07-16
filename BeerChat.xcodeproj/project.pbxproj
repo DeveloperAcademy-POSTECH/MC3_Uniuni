@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B33825D2A632DE60091229E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B33825C2A632DE60091229E /* GoogleService-Info.plist */; };
-		5B3382612A634E3B0091229E /* ChatRoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3382602A634E3B0091229E /* ChatRoomManager.swift */; };
-		5B3382632A634E880091229E /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3382622A634E880091229E /* FireStoreManager.swift */; };
+		5BF274842A642E8100A28C1E /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF274822A642E8100A28C1E /* FireStoreManager.swift */; };
+		5BF274852A642E8100A28C1E /* ChatRoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF274832A642E8100A28C1E /* ChatRoomManager.swift */; };
 		BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */; };
 		BF31D63C2A5BAB970069D5FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D63B2A5BAB970069D5FF /* ContentView.swift */; };
 		BF31D63E2A5BAB980069D5FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF31D63D2A5BAB980069D5FF /* Assets.xcassets */; };
@@ -32,8 +32,8 @@
 
 /* Begin PBXFileReference section */
 		5B33825C2A632DE60091229E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		5B3382602A634E3B0091229E /* ChatRoomManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatRoomManager.swift; path = "../../../MC2-Team17-PaPaJOYs/ForJOY/ChatRoomManager.swift"; sourceTree = "<group>"; };
-		5B3382622A634E880091229E /* FireStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FireStoreManager.swift; path = "../../../MC2-Team17-PaPaJOYs/ForJOY/FireStoreManager.swift"; sourceTree = "<group>"; };
+		5BF274822A642E8100A28C1E /* FireStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireStoreManager.swift; sourceTree = "<group>"; };
+		5BF274832A642E8100A28C1E /* ChatRoomManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomManager.swift; sourceTree = "<group>"; };
 		BF31D6362A5BAB970069D5FF /* BeerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerChatApp.swift; sourceTree = "<group>"; };
 		BF31D63B2A5BAB970069D5FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,9 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				BFBD7A312A610E6E00A3FC55 /* PageManager.swift */,
+				5BF274832A642E8100A28C1E /* ChatRoomManager.swift */,
+				5BF274822A642E8100A28C1E /* FireStoreManager.swift */,
 				BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */,
-				5B3382622A634E880091229E /* FireStoreManager.swift */,
-				5B3382602A634E3B0091229E /* ChatRoomManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,13 +323,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBD7A282A60F68800A3FC55 /* ProfileView.swift in Sources */,
+				5BF274852A642E8100A28C1E /* ChatRoomManager.swift in Sources */,
+				5BF274842A642E8100A28C1E /* FireStoreManager.swift in Sources */,
 				BFBD7A3A2A619C7200A3FC55 /* MainView.swift in Sources */,
 				BF31D63C2A5BAB970069D5FF /* ContentView.swift in Sources */,
-				5B3382632A634E880091229E /* FireStoreManager.swift in Sources */,
 				BFBD7A4C2A61BF9000A3FC55 /* UserManager.swift in Sources */,
 				BFBD7A2A2A60F68E00A3FC55 /* ChatView.swift in Sources */,
 				BFBD7A302A60F6A800A3FC55 /* CustomButton.swift in Sources */,
-				5B3382612A634E3B0091229E /* ChatRoomManager.swift in Sources */,
 				BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */,
 				BFBD7A2C2A60F69500A3FC55 /* ChatListView.swift in Sources */,
 				BFBD7A322A610E6E00A3FC55 /* PageManager.swift in Sources */,

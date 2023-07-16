@@ -26,9 +26,7 @@ struct ChatListView: View {
             ForEach(firestoreManager.chatRooms, id: \.self.roomId) { chatRoom in
                 NavigationLink(destination: ChatView(chatRoom: chatRoom, userId: userId)
                     .environmentObject(firestoreManager)) {
-                        if let message = chatRoom.recentMessage {
-                            Text(message.timestamp.description)
-                        }
+                        Text(chatRoom.recentMessage!.description)
                     }
             }
         }
