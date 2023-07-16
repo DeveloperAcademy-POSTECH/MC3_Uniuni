@@ -26,7 +26,11 @@ struct ChatListView: View {
             ForEach(firestoreManager.chatRooms, id: \.self.roomId) { chatRoom in
                 NavigationLink(destination: ChatView(chatRoom: chatRoom, userId: userId)
                     .environmentObject(firestoreManager)) {
-                        Text(chatRoom.recentMessage!.description)
+                        if let recentMessage = chatRoom.recentMessage {
+                            Text("RoomId : \(chatRoom.roomId!) -")+Text(recentMessage.text)+Text(recentMessage.timestamp.description)
+                        } else {
+                            Text("RoomId : \(chatRoom.roomId!) - 채팅을 시작하세요.")
+                        }
                     }
             }
         }

@@ -46,7 +46,7 @@ class ChatViewModel: ObservableObject {
     private var listener: ListenerRegistration?
     private var userId: String
     private var roomId: String
-
+    
     init(roomId: String, userId: String) {
         self.userId = userId
         self.roomId = roomId

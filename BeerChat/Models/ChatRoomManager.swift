@@ -14,7 +14,8 @@ struct ChatRoom: Codable {
     var questioner: String
     var respondent: String
     var status: String
-    var recentMessage: DocumentReference?
+    var recentMessage: Message?
+    var recentMessageDocumentReference: DocumentReference?
 
     enum CodingKeys: String, CodingKey {
         case roomId
@@ -30,35 +31,49 @@ struct ChatRoom: Codable {
         questioner = try container.decode(String.self, forKey: .questioner)
         respondent = try container.decode(String.self, forKey: .respondent)
         status = try container.decode(String.self, forKey: .status)
-        recentMessage = try container.decode(DocumentReference.self, forKey: .recentMessage)
-        
-        
-//        recentMessageDocumentReference.getDocument() { (document, error) in
-//            if let error = error {
-//                print("Error converting document: \(error.localizedDescription)")
-//            } else {
-//                self?.recentMessage = try? document?.data(as: Message.self)
-//            }
-//        }
+        recentMessageDocumentReference = try container.decode(DocumentReference.self, forKey: .recentMessage)
     }
     
-    init(questioner: String, respondent: String, status: String, recentMessage: DocumentReference) {
+    init(questioner: String, respondent: String, status: String, recentMessageDocumentReference: DocumentReference) {
         self.questioner = questioner
         self.respondent = respondent
         self.status = status
-        self.recentMessage = recentMessage
+        self.recentMessageDocumentReference = recentMessageDocumentReference
     }
 }
 
 class FirestoreManager: ObservableObject {
-    init() {
-        self.fetchAllChatRooms()
-    }
     private let database = Firestore.firestore()
-
+    private var listener: ListenerRegistration?
+    
     @Published var chatRooms = [ChatRoom]()
     @Published var matchingUsers = [User]()
     @Published var userKeywords = [String]()
+
+    init() {
+        listener = database.collection("chatRoom")
+            .whereField("questioner", isEqualTo: "iyNMs7XySOgBVmxNOS0lvkUlt6m2")
+            .addSnapshotListener { (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    self.chatRooms = []
+                    for document in querySnapshot!.documents {
+                        if var data = try? document.data(as: ChatRoom.self) {
+                            data.recentMessageDocumentReference?.getDocument { (document, error) in
+                                if let error = error {
+                                    print("Error : \(error.localizedDescription)")
+                                } else if let document = document, document.exists {
+                                    data.recentMessage = try? document.data(as: Message.self)
+                                    self.chatRooms.append(data)
+                                    self.chatRooms = self.chatRooms.sorted(by: {$0.recentMessage!.timestamp > $1.recentMessage!.timestamp})
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    }
     
     func resetAllData() {
         self.chatRooms.removeAll()
@@ -69,28 +84,7 @@ class FirestoreManager: ObservableObject {
     func resetMatchingUsers() {
         self.matchingUsers.removeAll()
     }
-
-    func fetchAllChatRooms() {
-        database.collection("chatRoom")
-            .whereField("questioner", isEqualTo: "iyNMs7XySOgBVmxNOS0lvkUlt6m2")
-            .addSnapshotListener { (querySnapshot, error) in
-                if let error = error {
-                    print("Error getting documents: \(error)")
-                } else {
-                    for document in querySnapshot!.documents {
-                        print(document.description)
-                        if let data = try? document.data(as: ChatRoom.self) {
-                            print(data.questioner)
-                            print(data.recentMessage!.description)
-                        }
-                    }
-                    self.chatRooms = querySnapshot!.documents.compactMap { document in
-                        try? document.data(as: ChatRoom.self)
-                    }//.sorted(by: {$0.recentMessage.timestamp > $1.recentMessage.timestamp})
-                }
-            }
-    }
-
+    
     func fetchUsersByKeywords(matchingKeywords: [String]) {
         if matchingKeywords.isEmpty {
             return
