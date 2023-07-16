@@ -9,86 +9,38 @@ import SwiftUI
 import FirebaseAuth
 
 struct EntryView: View {
+    @FocusState private var isFocused: Bool
     @State private var afiliation: String = ""
     @State private var major: String = ""
     @State private var yearOfAdmission: Int = 2000
-    @State private var email: String = ""
-    @State private var isEmailVerified: Bool = false
     @State private var userid: String = ""
     var body: some View {
-        VStack {
-            Text("EntryView")
-            TextField("이메일 입력", text: $email)
-                .padding()
-                .autocapitalization(.none)
-                .keyboardType(.emailAddress)
-                .disableAutocorrection(true)
-            Button(action: {
-                sendSignInLink()
-            }, label: {
-                Text("로그인 이메일 보내기")
-                    .padding()
-                    .background(.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-            })
-            if isEmailVerified {
-                TextField("학교", text: $afiliation)
-                TextField("전공", text: $major)
-                Picker("", selection: $yearOfAdmission) {
-                    let currentYear = Calendar.current.component(.year, from: Date())
-                    ForEach(2010...currentYear, id: \.self) {
-                        Text(String($0))
-                    }
+        ZStack {
+            TextField("학교", text: $afiliation)
+            TextField("전공", text: $major)
+            Picker("", selection: $yearOfAdmission) {
+                let currentYear = Calendar.current.component(.year, from: Date())
+                ForEach(2010...currentYear, id: \.self) {
+                    Text(String($0))
                 }
-                .pickerStyle(InlinePickerStyle())
-                Button("회원가입", action: {
-                    let user = User(affiliation: afiliation, major: major, yearOfAdmission: yearOfAdmission)
-                    UserManager.shared.addUser(documentId: userid, user: user) { isSuccess in
-                        if isSuccess {
-                            print("회원가입 성공")
-                            PageManager.shared.currentPage = .keywordSelection
-                        } else {
-                            print("회원가입 실패")
-                        }
-                    }
-                })
             }
-        }
-        .onOpenURL { link in
-            if Auth.auth().isSignIn(withEmailLink: link.absoluteString) {
-                Auth.auth().signIn(withEmail: email, link: link.absoluteString) { user, error in
-                    if let error = error {
-                        print(error)
+            .pickerStyle(InlinePickerStyle())
+            Button("회원가입", action: {
+                let user = User(affiliation: afiliation, major: major, yearOfAdmission: yearOfAdmission)
+                UserManager.shared.addUser(documentId: userid, user: user) { isSuccess in
+                    if isSuccess {
+                        print("회원가입 성공")
+                        PageManager.shared.currentPage = .keywordSelection
                     } else {
-                        if let uid = user?.user.uid {
-                            UserManager.shared.fetchCurrentUser(userId: uid) { currentUser in
-                                if currentUser == nil {
-                                    isEmailVerified = true
-                                    self.userid = uid
-                                } else {
-                                    PageManager.shared.currentPage = .main
-                                }
-                            }
-                        }
+                        print("회원가입 실패")
                     }
                 }
-            }
+            })
+        }
+        .onTapGesture {
+            isFocused = false
         }
     }
-
-    private func sendSignInLink() {
-        let actionCodeSettings = ActionCodeSettings()
-        actionCodeSettings.handleCodeInApp = true
-        actionCodeSettings.url = URL(string: "https://beerchat.page.link/emailAuth")
-        actionCodeSettings.setIOSBundleID(Bundle.main.bundleIdentifier!)
-        Auth.auth().sendSignInLink(toEmail: email, actionCodeSettings: actionCodeSettings) { error in
-            if let error = error {
-                print("Error sending email:", error.localizedDescription)
-            }
-        }
-    }
-
 }
 
 struct EntryView_Previews: PreviewProvider {
