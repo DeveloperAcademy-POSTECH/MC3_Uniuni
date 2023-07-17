@@ -26,7 +26,8 @@ struct KeywordSelectionView: View {
                 }
             Spacer()
             Button(action: {
-                UserManager.shared.fetchCurrentUser(userId: "iyNMs7XySOgBVmxNOS0lvkUlt6m2") { user in
+                guard let currentUserId = UserManager.shared.currentUser?.userId else { return }
+                UserManager.shared.fetchCurrentUser(userId: currentUserId) { user in
                     if let user = user {
                         var newUser: User = user
                         newUser.keywords = Array(seletedKewords)

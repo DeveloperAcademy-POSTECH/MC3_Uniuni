@@ -32,7 +32,8 @@ struct MatchingView: View {
             Button(action: {
                 UserManager.shared.fetchUserKeyword(keywords: Array(seletedKeywords)) { user in
                     if let user = user {
-                        self.matchingUser = user.filter { $0.userId != "iyNMs7XySOgBVmxNOS0lvkUlt6m2"}.randomElement()
+                        guard let currentUserId = UserManager.shared.currentUser?.userId else { return }
+                        self.matchingUser = user.filter { $0.userId != currentUserId }.randomElement()
                         self.isMatching = true
                     }
                 }
