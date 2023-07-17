@@ -62,7 +62,7 @@ struct MatchingView: View {
         }
         .fullScreenCover(isPresented: $isMatching) {
             if let matchingUser = self.matchingUser {
-                MatchingProfileView(user: matchingUser, keyword: lastKeyword, isPresentedSheet: $isMatching, chatRoomId: $chatRoomId, pageIndex: $pageIndex)
+                MatchingProfileView(user: matchingUser, keyword: lastKeyword, isPresentedSheet: $isMatching, pageIndex: $pageIndex)
             }
         }
     }

@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MatchingProfileView: View {
+    @StateObject var firestoreManager = FirestoreManager.shared
     let user: User
     let keyword: String
     @Binding var isPresentedSheet: Bool
-    @Binding var chatRoomId: String
     @Binding var pageIndex: Int
-    @EnvironmentObject var firestoreManager: FirestoreManager
+    @State private var chatRoomId: String?
     var body: some View {
         VStack(alignment: .leading) {
             Text("이 사람과\n대화 어때요?")
@@ -57,16 +57,19 @@ struct MatchingProfileView: View {
                         .foregroundColor(.blue)
                 }
                 Spacer()
+                
                 Button {
                     guard let currentUserId = UserManager.shared.currentUser?.userId,
                           let partneruserId = user.userId else { return }
                     firestoreManager.addChatRoom(userId: currentUserId, partnerId: partneruserId, keyword: keyword) { complete in
-                        guard let chatRoomId = complete else { return }
-                        self.chatRoomId = chatRoomId
+                        if let complete = complete {
+                            self.chatRoomId = complete
+                            print("ChatOn")
+                            firestoreManager.isChatOn = true
+                            pageIndex = 1
+                            isPresentedSheet = false
+                        }
                     }
-
-                    pageIndex = 1
-                    isPresentedSheet = false
                 } label: {
                     Text("수락하기")
                         .font(.body.weight(.bold))
@@ -84,6 +87,6 @@ struct MatchingProfileView: View {
 
 struct MatchingProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchingProfileView(user: User(affiliation: "애플아카데미", major: "개발", yearOfAdmission: 2018), keyword: "부트캠프", isPresentedSheet: .constant(true), chatRoomId: .constant(""), pageIndex: .constant(0))
+        MatchingProfileView(user: User(affiliation: "애플아카데미", major: "개발", yearOfAdmission: 2018), keyword: "부트캠프", isPresentedSheet: .constant(true), pageIndex: .constant(0))
     }
 }

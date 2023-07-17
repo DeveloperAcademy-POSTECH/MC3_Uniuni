@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct ChatView: View {
-    @EnvironmentObject var firestoreManager: FirestoreManager
-    @ObservedObject var chatViewModel: ChatViewModel
+    @StateObject var chatViewModel: ChatViewModel
 
-    var chatRoom: ChatRoom
+    var chatRoomId: String
     var userId: String
 
-    init(chatRoom: ChatRoom, userId: String) {
-        self.chatRoom = chatRoom
+    init(chatRoomId: String, userId: String) {
+        self.chatRoomId = chatRoomId
         self.userId = userId
-        self.chatViewModel = ChatViewModel(roomId: chatRoom.roomId!, userId: userId)
+        self._chatViewModel = StateObject(wrappedValue: ChatViewModel(roomId: chatRoomId, userId: userId))
     }
 
     var body: some View {
