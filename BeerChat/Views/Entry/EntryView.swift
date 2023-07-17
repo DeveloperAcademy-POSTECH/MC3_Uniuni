@@ -98,7 +98,11 @@ struct EntryView: View {
                             UserManager.shared.addUser(documentId: documentId, user: user) { isSuccess in
                                 if isSuccess {
                                     print("회원가입 성공")
-                                    PageManager.shared.currentPage = .keywordSelection
+                                    FirestoreManager.shared.initChatRoom(userId: userid) { isSuccessInitChatRoom in
+                                        if isSuccessInitChatRoom {
+                                            PageManager.shared.currentPage = .keywordSelection
+                                        }
+                                    }
                                 } else {
                                     print("회원가입 실패")
                                 }

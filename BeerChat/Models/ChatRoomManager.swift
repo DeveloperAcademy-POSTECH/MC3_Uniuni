@@ -46,21 +46,25 @@ struct ChatRoom: Codable {
         self.keyword = keyword
     }
 }
+
 // TODO: 클래스 이름 변경
-class FirestoreManager: ObservableObject {
+final class FirestoreManager: ObservableObject {
+    static let shared = FirestoreManager()
+    private init () {}
+
     private let database = Firestore.firestore()
     private var listener: ListenerRegistration?
     @Published var chatRooms = [ChatRoom]()
-    @Published var matchingUsers = [User]()
-    @Published var userKeywords = [String]()
+    @Published var recentChatRoomId: String?
+    @Published var isChatOn: Bool = false
     
-    func fetchChatRoom() {
-        guard let currentUserId = UserManager.shared.currentUser?.userId else { return }
-        database.collection("chatRoom")
-            .whereField("questioner", isEqualTo: currentUserId)
+    func initChatRoom(userId: String, completion: @escaping (Bool) -> Void) {
+        listener = database.collection("chatRoom")
+            .whereField("questioner", isEqualTo: userId)
             .addSnapshotListener { (querySnapshot, error) in
                 if let error = error {
                     print("Error getting documents: \(error)")
+                    completion(false)
                 } else {
                     self.chatRooms = []
                     for document in querySnapshot!.documents {
@@ -71,29 +75,17 @@ class FirestoreManager: ObservableObject {
                                         print("Error : \(error.localizedDescription)")
                                     } else if let document = document, document.exists {
                                         data.recentMessage = try? document.data(as: Message.self)
-                                        self.chatRooms.append(data)
-                                        //                                    self.chatRooms = self.chatRooms.sorted(by: {$0.recentMessage!.timestamp > $1.recentMessage!.timestamp})
                                     }
                                 }
-                            } else {
-                                self.chatRooms.append(data)
                             }
+                            self.chatRooms.append(data)
                         }
                     }
+                    completion(true)
                 }
             }
     }
-    
-    func resetAllData() {
-        self.chatRooms.removeAll()
-        self.userKeywords.removeAll()
-        self.resetMatchingUsers()
-    }
-
-    func resetMatchingUsers() {
-        self.matchingUsers.removeAll()
-    }
-    
+    /*
     func fetchUsersByKeywords(matchingKeywords: [String]) {
         if matchingKeywords.isEmpty {
             return
@@ -110,16 +102,49 @@ class FirestoreManager: ObservableObject {
                 }
             }
         }
-    }
+    }*/
 
     func addChatRoom(userId: String, partnerId: String, keyword: String, completion: @escaping (String?) -> Void) {
         let newChatRoom = ChatRoom(questioner: userId, respondent: partnerId, status: "pending", keyword: keyword)
         do {
             let data = try Firestore.Encoder().encode(newChatRoom)
-            let ref = database.collection("chatRoom").addDocument(data: data)
-            completion(ref.documentID)
+            var ref: DocumentReference?
+            ref = database.collection("chatRoom").addDocument(data: data) { error in
+                if let error = error {
+                    print("Error adding chatRoom: \(error)")
+                } else {
+                    guard let documentID = ref?.documentID else {
+                                print("Error: Document ID is nil")
+                                return
+                            }
+                    print(documentID)
+                    self.recentChatRoomId = documentID
+                    completion(self.recentChatRoomId)
+                }
+            }
         } catch {
             print("메시지 전송 에러: \(error.localizedDescription)")
+            completion(nil)
+        }
+    }
+    
+    func updateRecentChatRoomId(chatRoomId: String, completion: @escaping (Bool) -> Void) {
+        self.recentChatRoomId = chatRoomId
+        completion(true)
+    }
+    
+    func fetchChatRoom(chatRoomId: String, completion: @escaping (ChatRoom?) -> Void) {
+        database.collection("user").document(chatRoomId).getDocument { (document, error) in
+            if error != nil {
+                print("Error reading the document: \(error.debugDescription)")
+                completion(nil)
+                return
+            }
+            if let document = document, document.exists {
+                completion(try? document.data(as: ChatRoom.self))
+            } else {
+                print("Error reading the document: User Document does not exist")
+            }
             completion(nil)
         }
     }

@@ -9,11 +9,13 @@ import SwiftUI
 import Firebase
 
 struct ChatListView: View {
-    @StateObject var firestoreManager: FirestoreManager = FirestoreManager()
-    @State private var isLogin = false
+    @State private var isLogin: Bool = false
+    @Binding var chatRoomId: String
     @State var userEmail = ""
-    @State var userId: String
-    @State var text = ""
+    @State var userId = ""
+    @State var searchingText = ""
+    @StateObject var firestoreManager = FirestoreManager.shared
+    @State var isChatOn = false
     let firebaseAuth = Auth.auth()
 
     init() {
@@ -37,8 +39,7 @@ struct ChatListView: View {
             SearchBar(text: $text)
             List {
                 ForEach(firestoreManager.chatRooms, id: \.self.roomId) { chatRoom in
-                    NavigationLink(destination: ChatView(chatRoom: chatRoom, userId: userId)
-                        .environmentObject(firestoreManager)) {
+                    NavigationLink(destination: ChatView(chatRoomId: chatRoom.roomId!, userId: userId)) {
                             if let recentMessage = chatRoom.recentMessage {
                                 HStack {
                                     Image(systemName: "person.fill")
@@ -84,10 +85,32 @@ struct ChatListView: View {
                                 Text("대화를 시작해 보세요.")
                             }
                         }
-                }
+                    }
             }
             .listStyle(.plain)
             .padding(.horizontal, 8)
+        }
+        .background {
+            if let recentChatRoomId = firestoreManager.recentChatRoomId {
+                NavigationLink(destination: ChatView(chatRoomId: recentChatRoomId, userId: UserManager.shared.currentUser!.userId!), isActive: $isChatOn) { EmptyView() }
+            }
+        }
+        .onAppear {
+            isChatOn = firestoreManager.isChatOn
+            firestoreManager.isChatOn = false
+            if let user = UserManager.shared.currentUser {
+                if let uid = user.userId {
+                    userId = uid
+                }
+            }
+        }
+    }
+}
+
+struct ChatListView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            ChatListView(chatRoomId: .constant(""))
         }
     }
 }

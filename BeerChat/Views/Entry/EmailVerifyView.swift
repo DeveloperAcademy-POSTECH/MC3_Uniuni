@@ -91,7 +91,11 @@ struct EmailVerifyView: View {
                                         self.userid = uid
                                         PageManager.shared.currentPage = .entry
                                     } else {
-                                        PageManager.shared.currentPage = .main
+                                        FirestoreManager.shared.initChatRoom(userId: userid) { isSuccess in
+                                            if isSuccess {
+                                                PageManager.shared.currentPage = .main
+                                            }
+                                        }
                                     }
                                 }
                             }

@@ -122,7 +122,6 @@ final class UserManager {
             if error != nil {
                 print("Error reading the document \(error.debugDescription)")
                 completion(nil)
-                return
             }
             
             var users: [User] = []
