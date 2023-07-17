@@ -11,8 +11,8 @@ struct ContentView: View {
     @ObservedObject var pageManager = PageManager.shared
     var body: some View {
         switch pageManager.currentPage {
-        case .splash:
-            SplashView()
+        case .emailVerify:
+            EmailVerifyView()
         case .entry:
             EntryView()
         case .keywordSelection:

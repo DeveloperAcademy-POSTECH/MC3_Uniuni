@@ -19,13 +19,14 @@
 		BFBD7A2C2A60F69500A3FC55 /* ChatListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A2B2A60F69500A3FC55 /* ChatListView.swift */; };
 		BFBD7A302A60F6A800A3FC55 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A2F2A60F6A800A3FC55 /* CustomButton.swift */; };
 		BFBD7A322A610E6E00A3FC55 /* PageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A312A610E6E00A3FC55 /* PageManager.swift */; };
-		BFBD7A342A610F5700A3FC55 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A332A610F5700A3FC55 /* SplashView.swift */; };
 		BFBD7A362A61103200A3FC55 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A352A61103200A3FC55 /* EntryView.swift */; };
 		BFBD7A382A61104900A3FC55 /* MatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A372A61104900A3FC55 /* MatchingView.swift */; };
 		BFBD7A3A2A619C7200A3FC55 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A392A619C7200A3FC55 /* MainView.swift */; };
 		BFBD7A482A61BD3600A3FC55 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A472A61BD3600A3FC55 /* FirebaseAnalytics */; };
 		BFBD7A4C2A61BF9000A3FC55 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */; };
 		BFBD7A4F2A61D45500A3FC55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFBD7A4E2A61D45500A3FC55 /* GoogleService-Info.plist */; };
+		BFBD7A5B2A64121900A3FC55 /* KeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A5A2A64121900A3FC55 /* KeyboardManager.swift */; };
+		BFBD7A5D2A6419B000A3FC55 /* EmailVerifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A5C2A6419B000A3FC55 /* EmailVerifyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,13 +40,14 @@
 		BFBD7A2B2A60F69500A3FC55 /* ChatListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListView.swift; sourceTree = "<group>"; };
 		BFBD7A2F2A60F6A800A3FC55 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		BFBD7A312A610E6E00A3FC55 /* PageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageManager.swift; sourceTree = "<group>"; };
-		BFBD7A332A610F5700A3FC55 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		BFBD7A352A61103200A3FC55 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		BFBD7A372A61104900A3FC55 /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
 		BFBD7A392A619C7200A3FC55 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		BFBD7A4D2A61CCDB00A3FC55 /* BeerChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeerChat.entitlements; sourceTree = "<group>"; };
 		BFBD7A4E2A61D45500A3FC55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BFBD7A5A2A64121900A3FC55 /* KeyboardManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardManager.swift; sourceTree = "<group>"; };
+		BFBD7A5C2A6419B000A3FC55 /* EmailVerifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerifyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,6 @@
 			children = (
 				BFBD7A202A60F62F00A3FC55 /* Components */,
 				BF31D63B2A5BAB970069D5FF /* ContentView.swift */,
-				BFBD7A3D2A61A15B00A3FC55 /* Splash */,
 				BFBD7A3C2A619DA300A3FC55 /* Entry */,
 				BFBD7A3E2A61A19A00A3FC55 /* KeywordSelection */,
 				BFBD7A3B2A619D9500A3FC55 /* Main */,
@@ -118,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				BFBD7A312A610E6E00A3FC55 /* PageManager.swift */,
+				BFBD7A5A2A64121900A3FC55 /* KeyboardManager.swift */,
 				BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */,
 			);
 			path = Models;
@@ -161,17 +163,10 @@
 		BFBD7A3C2A619DA300A3FC55 /* Entry */ = {
 			isa = PBXGroup;
 			children = (
+				BFBD7A5C2A6419B000A3FC55 /* EmailVerifyView.swift */,
 				BFBD7A352A61103200A3FC55 /* EntryView.swift */,
 			);
 			path = Entry;
-			sourceTree = "<group>";
-		};
-		BFBD7A3D2A61A15B00A3FC55 /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				BFBD7A332A610F5700A3FC55 /* SplashView.swift */,
-			);
-			path = Splash;
 			sourceTree = "<group>";
 		};
 		BFBD7A3E2A61A19A00A3FC55 /* KeywordSelection */ = {
@@ -326,8 +321,9 @@
 				BFBD7A2C2A60F69500A3FC55 /* ChatListView.swift in Sources */,
 				BFBD7A322A610E6E00A3FC55 /* PageManager.swift in Sources */,
 				BFBD7A382A61104900A3FC55 /* MatchingView.swift in Sources */,
-				BFBD7A342A610F5700A3FC55 /* SplashView.swift in Sources */,
 				BFBD7A262A60F68200A3FC55 /* KeywordSelectionView.swift in Sources */,
+				BFBD7A5D2A6419B000A3FC55 /* EmailVerifyView.swift in Sources */,
+				BFBD7A5B2A64121900A3FC55 /* KeyboardManager.swift in Sources */,
 				BFBD7A362A61103200A3FC55 /* EntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

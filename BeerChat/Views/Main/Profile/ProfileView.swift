@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct ProfileView: View {
     var body: some View {
@@ -18,6 +19,15 @@ struct ProfileView: View {
                 Text(user.keywords.description)
             }
             Text("ProfileView")
+            Button("Logout") {
+                do {
+                    try Auth.auth().signOut() // Auth.auth().signOut() 메서드 호출
+                    UserManager.shared.signOut()
+                    PageManager.shared.currentPage = .emailVerify
+                } catch let signOutError as NSError {
+                    print("Error signing out: \(signOutError)")
+                }
+            }
         }
     }
 }
