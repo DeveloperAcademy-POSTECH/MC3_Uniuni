@@ -29,6 +29,7 @@
 		BFBD7A3A2A619C7200A3FC55 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A392A619C7200A3FC55 /* MainView.swift */; };
 		BFBD7A482A61BD3600A3FC55 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A472A61BD3600A3FC55 /* FirebaseAnalytics */; };
 		BFBD7A4C2A61BF9000A3FC55 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */; };
+		F18D67D22A64DF9300A82B97 /* MatchingProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18D67D12A64DF9300A82B97 /* MatchingProfileView.swift */; };
 		FFB0EDF32A6411590034DE4F /* KeywordListVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0EDF22A6411590034DE4F /* KeywordListVIew.swift */; };
 		FFB0EDF52A6411820034DE4F /* Keywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0EDF42A6411820034DE4F /* Keywords.swift */; };
 		FFB0EDF72A6421470034DE4F /* keywordGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0EDF62A6421470034DE4F /* keywordGridView.swift */; };
@@ -55,6 +56,7 @@
 		BFBD7A392A619C7200A3FC55 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		BFBD7A4D2A61CCDB00A3FC55 /* BeerChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeerChat.entitlements; sourceTree = "<group>"; };
+		F18D67D12A64DF9300A82B97 /* MatchingProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingProfileView.swift; sourceTree = "<group>"; };
 		FFB0EDF22A6411590034DE4F /* KeywordListVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordListVIew.swift; sourceTree = "<group>"; };
 		FFB0EDF42A6411820034DE4F /* Keywords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keywords.swift; sourceTree = "<group>"; };
 		FFB0EDF62A6421470034DE4F /* keywordGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keywordGridView.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				BFBD7A372A61104900A3FC55 /* MatchingView.swift */,
+				F18D67D12A64DF9300A82B97 /* MatchingProfileView.swift */,
 			);
 			path = Matching;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBD7A282A60F68800A3FC55 /* ProfileView.swift in Sources */,
+				F18D67D22A64DF9300A82B97 /* MatchingProfileView.swift in Sources */,
 				5BF274852A642E8100A28C1E /* ChatRoomManager.swift in Sources */,
 				5BF274842A642E8100A28C1E /* FireStoreManager.swift in Sources */,
 				BFBD7A3A2A619C7200A3FC55 /* MainView.swift in Sources */,
