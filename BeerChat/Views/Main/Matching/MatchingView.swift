@@ -10,6 +10,8 @@ import SwiftUI
 struct MatchingView: View {
     @State var seletedKeywords: Set<String> = []
     @State var lastKeyword: String = ""
+    @Binding var isMatching: Bool
+    @Binding var matchingUser: User?
     var keywordCount: Int {
         seletedKeywords.count
     }
@@ -26,15 +28,21 @@ struct MatchingView: View {
                     }
                 }
             Button(action: {
-                
+                UserManager.shared.fetchUserKeyword(keywords: Array(seletedKeywords)) { user in
+                    if let user = user {
+                        self.matchingUser = user.filter { $0.userId != "iyNMs7XySOgBVmxNOS0lvkUlt6m2"}.randomElement()
+                        self.isMatching = true
+                    }
+                }
             } ) {
                 Text("확인")
                     .font(.title2.weight(.bold))
                     .foregroundColor(Color.white)
             }
+            .disabled(seletedKeywords.isEmpty)
             .frame(height: 60)
             .frame(maxWidth: .infinity)
-            .background(.gray)
+            .background(seletedKeywords.isEmpty ? .gray : .blue)
             .cornerRadius(11)
         }
         .padding()
@@ -43,6 +51,6 @@ struct MatchingView: View {
 
 struct MatchingView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchingView()
+        MatchingView(isMatching: .constant(false), matchingUser: .constant(nil))
     }
 }
