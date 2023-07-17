@@ -54,8 +54,9 @@ class FirestoreManager: ObservableObject {
     @Published var userKeywords = [String]()
     
     func fetchChatRoom() {
+        guard let currentUserId = UserManager.shared.currentUser?.userId else { return }
         database.collection("chatRoom")
-            .whereField("questioner", isEqualTo: "iyNMs7XySOgBVmxNOS0lvkUlt6m2")
+            .whereField("questioner", isEqualTo: currentUserId)
             .addSnapshotListener { (querySnapshot, error) in
                 if let error = error {
                     print("Error getting documents: \(error)")
