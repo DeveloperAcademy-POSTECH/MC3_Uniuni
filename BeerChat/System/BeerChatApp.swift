@@ -19,15 +19,6 @@ struct BeerChatApp: App {
                 PageManager.shared.currentPage = .main
             }
         })
-        /*
-        if let uid = Auth.auth().currentUser?.uid {
-            UserManager.shared.fetchCurrentUser(userId: uid, completion: { user in
-                if let userid = user?.userId {
-                    print(userid)
-                    PageManager.shared.currentPage = .main
-                }
-            })
-        }*/
     }
 
     var body: some Scene {
