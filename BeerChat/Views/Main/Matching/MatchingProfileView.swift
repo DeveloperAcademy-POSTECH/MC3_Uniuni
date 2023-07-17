@@ -10,6 +10,7 @@ import SwiftUI
 struct MatchingProfileView: View {
     let user: User
     @Binding var isPresentedSheet: Bool
+    @Binding var pageIndex: Int
     @EnvironmentObject var firestoreManager: FirestoreManager
     var body: some View {
         VStack(alignment: .leading) {
@@ -53,6 +54,8 @@ struct MatchingProfileView: View {
                     guard let currentUserId = UserManager.shared.currentUser?.userId,
                           let partneruserId = user.userId else { return }
                     firestoreManager.addChatRoom(userId: currentUserId, partnerId: partneruserId)
+                    pageIndex = 1
+                    isPresentedSheet = false
                 } label: {
                     Text("수락하기")
                         .frame(width: 110, height: 30)
@@ -67,6 +70,6 @@ struct MatchingProfileView: View {
 
 struct MatchingProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchingProfileView(user: User(affiliation: "애플아카데미", major: "개발", yearOfAdmission: 2018), isPresentedSheet: .constant(true))
+        MatchingProfileView(user: User(affiliation: "애플아카데미", major: "개발", yearOfAdmission: 2018), isPresentedSheet: .constant(true), pageIndex: .constant(0))
     }
 }
