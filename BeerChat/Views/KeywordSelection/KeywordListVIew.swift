@@ -1,5 +1,5 @@
 //
-//  KeywordListVIew.swift
+//  KeywordListView.swift
 //  BeerChat
 //
 //  Created by apple on 2023/07/16.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct KeywordListVIew: View {
+struct KeywordListView: View {
     @State var currentKeyword: Keyword?
     @Binding var seletedKewords: Set<String>
     
@@ -38,8 +38,8 @@ struct KeywordListVIew: View {
     }
 }
 
-struct KeywordListVIew_Previews: PreviewProvider {
+struct KeywordListView_Previews: PreviewProvider {
     static var previews: some View {
-        KeywordListVIew(seletedKewords: .constant([]))
+        KeywordListView(seletedKewords: .constant([]))
     }
 }
