@@ -22,7 +22,7 @@ struct MainView: View {
                         Text("Main")
                     }
                     .tag(0)
-                ChatListView(chatroomId: $chatRoomId)
+                ChatListView(chatRoomId: $chatRoomId)
                     .environmentObject(firestoreManager)
                     .tabItem {
                         Image(systemName: "message.fill")

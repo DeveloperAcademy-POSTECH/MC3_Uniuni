@@ -35,8 +35,9 @@ struct ChatRoom: Codable {
         respondent = try container.decode(String.self, forKey: .respondent)
         status = try container.decode(String.self, forKey: .status)
         keyword = try container.decode(String.self, forKey: .keyword)
-        recentMessageDocumentReference = try container.decode(DocumentReference.self, forKey: .recentMessage)
+        recentMessageDocumentReference = try? container.decode(DocumentReference.self, forKey: .recentMessage)
     }
+    
     init(questioner: String, respondent: String, status: String, keyword: String) {
         self.questioner = questioner
         self.respondent = respondent
@@ -51,9 +52,9 @@ class FirestoreManager: ObservableObject {
     @Published var chatRooms = [ChatRoom]()
     @Published var matchingUsers = [User]()
     @Published var userKeywords = [String]()
-
-    init() {
-        listener = database.collection("chatRoom")
+    
+    func fetchChatRoom() {
+        database.collection("chatRoom")
             .whereField("questioner", isEqualTo: "iyNMs7XySOgBVmxNOS0lvkUlt6m2")
             .addSnapshotListener { (querySnapshot, error) in
                 if let error = error {
@@ -62,20 +63,25 @@ class FirestoreManager: ObservableObject {
                     self.chatRooms = []
                     for document in querySnapshot!.documents {
                         if var data = try? document.data(as: ChatRoom.self) {
-                            data.recentMessageDocumentReference?.getDocument { (document, error) in
-                                if let error = error {
-                                    print("Error : \(error.localizedDescription)")
-                                } else if let document = document, document.exists {
-                                    data.recentMessage = try? document.data(as: Message.self)
-                                    self.chatRooms.append(data)
-                                    self.chatRooms = self.chatRooms.sorted(by: {$0.recentMessage!.timestamp > $1.recentMessage!.timestamp})
+                            if let recentMessageDocumentReference = data.recentMessageDocumentReference {
+                                recentMessageDocumentReference.getDocument { (document, error) in
+                                    if let error = error {
+                                        print("Error : \(error.localizedDescription)")
+                                    } else if let document = document, document.exists {
+                                        data.recentMessage = try? document.data(as: Message.self)
+                                        self.chatRooms.append(data)
+                                        //                                    self.chatRooms = self.chatRooms.sorted(by: {$0.recentMessage!.timestamp > $1.recentMessage!.timestamp})
+                                    }
                                 }
+                            } else {
+                                self.chatRooms.append(data)
                             }
                         }
                     }
                 }
             }
     }
+    
     func resetAllData() {
         self.chatRooms.removeAll()
         self.userKeywords.removeAll()
@@ -90,7 +96,7 @@ class FirestoreManager: ObservableObject {
         if matchingKeywords.isEmpty {
             return
         }
-        database.collection("user").whereField("keywords", arrayContainsAny: matchingKeywords).getDocuments() { (querySnapshot, error) in
+        database.collection("user").whereField("keywords", arrayContainsAny: matchingKeywords).getDocuments { (querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
             } else {
@@ -104,12 +110,12 @@ class FirestoreManager: ObservableObject {
         }
     }
 
-    func addChatRoom(userId: String, partnerId: String, completion: @escaping (String?) -> Void) {
-        let newChatRoom = ChatRoom(questioner: userId, respondent: partnerId, status: "pending", keyword: "test")
+    func addChatRoom(userId: String, partnerId: String, keyword: String, completion: @escaping (String?) -> Void) {
+        let newChatRoom = ChatRoom(questioner: userId, respondent: partnerId, status: "pending", keyword: keyword)
         do {
             let data = try Firestore.Encoder().encode(newChatRoom)
-            _ = try database.collection("chatRoom").addDocument(data: data)
-            completion(newChatRoom.roomId)
+            let ref = database.collection("chatRoom").addDocument(data: data)
+            completion(ref.documentID)
         } catch {
             print("메시지 전송 에러: \(error.localizedDescription)")
             completion(nil)

@@ -11,7 +11,7 @@ import Firebase
 struct ChatListView: View {
     @EnvironmentObject var firestoreManager: FirestoreManager
     @State private var isLogin: Bool = false
-    @Binding var chatroomId: String
+    @Binding var chatRoomId: String
     @State var userEmail = ""
     @State var userId = ""
     @State var searchingText = ""
@@ -20,7 +20,7 @@ struct ChatListView: View {
         List {
             ForEach(firestoreManager.chatRooms, id: \.self.roomId) { chatRoom in
                 NavigationLink(destination: ChatView(chatRoom: chatRoom, userId: userId)
-                    .environmentObject(firestoreManager), isActive: isActiveBinding(chatRoom.roomId ?? "")) {
+                    .environmentObject(firestoreManager)) {
                         if let recentMessage = chatRoom.recentMessage {
                             HStack {
                                 Image(systemName: "person.fill")
@@ -32,7 +32,7 @@ struct ChatListView: View {
                                             .foregroundColor(.white)
                                             .padding(.horizontal, 8)
                                             .padding(.vertical, 4)
-                                            .background (
+                                            .background(
                                                 Rectangle()
                                                     .fill(userId == chatRoom.questioner ? .indigo : .purple)
                                                     .cornerRadius(12)
@@ -43,7 +43,7 @@ struct ChatListView: View {
                                             .foregroundColor(.white)
                                             .padding(.horizontal, 8)
                                             .padding(.vertical, 4)
-                                            .background (
+                                            .background(
                                                 Rectangle()
                                                     .fill(chatRoom.status != "end" ? .blue : Color(UIColor.systemGray4))
                                                     .cornerRadius(12)
@@ -72,22 +72,12 @@ struct ChatListView: View {
             }
         }
     }
-    
-    private func isActiveBinding(_ user: String) -> Binding<Bool> {
-        .init {
-            user == chatroomId
-        } set: { isActive in
-            if isActive {
-                chatroomId = user
-            }
-        }
-    }
 }
 
 struct ChatListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ChatListView(chatroomId: .constant(""))
+            ChatListView(chatRoomId: .constant(""))
                 .environmentObject(FirestoreManager())
         }
     }

@@ -36,7 +36,7 @@ struct MatchingView: View {
                         self.isMatching = true
                     }
                 }
-            } ) {
+            }) {
                 Text("확인")
                     .font(.title2.weight(.bold))
                     .foregroundColor(Color.white)
@@ -55,7 +55,7 @@ struct MatchingView: View {
         }
         .fullScreenCover(isPresented: $isMatching) {
             if let matchingUser = self.matchingUser {
-                MatchingProfileView(user: matchingUser, isPresentedSheet: $isMatching, chatRoomId: $chatRoomId, pageIndex: $pageIndex)
+                MatchingProfileView(user: matchingUser, keyword: lastKeyword, isPresentedSheet: $isMatching, chatRoomId: $chatRoomId, pageIndex: $pageIndex)
             }
         }
     }

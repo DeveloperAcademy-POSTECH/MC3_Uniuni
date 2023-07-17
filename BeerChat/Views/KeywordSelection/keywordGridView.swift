@@ -17,7 +17,7 @@ struct KeywordGridView: View {
             ForEach(keyword, id: \.self) { word in
                 VStack {
                     Button(action: {
-                        if !seletedKewords.contains(word){
+                        if !seletedKewords.contains(word) {
                             lastkeyword = word
                             seletedKewords.insert(lastkeyword)
                         } else {
