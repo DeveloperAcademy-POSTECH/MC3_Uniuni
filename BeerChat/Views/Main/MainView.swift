@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @State var isMatching: Bool = false
     @State var matchingUser: User?
+    @StateObject var firestoreManager: FirestoreManager = FirestoreManager()
     
     var body: some View {
         NavigationStack {
@@ -27,9 +28,11 @@ struct MainView: View {
                     .fullScreenCover(isPresented: $isMatching) {
                         if let matchingUser = self.matchingUser {
                             MatchingProfileView(user: matchingUser, isPresentedSheet: $isMatching)
+                                .environmentObject(firestoreManager)
                         }
                     }
                 ChatListView()
+                    .environmentObject(firestoreManager)
                     .tabItem {
                         Image(systemName: "message.fill")
                         Text("Chat")

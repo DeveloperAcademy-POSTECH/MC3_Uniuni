@@ -10,6 +10,7 @@ import SwiftUI
 struct MatchingProfileView: View {
     let user: User
     @Binding var isPresentedSheet: Bool
+    @EnvironmentObject var firestoreManager: FirestoreManager
     var body: some View {
         VStack(alignment: .leading) {
             Text("닉네임과의\n대화 어때요?")
@@ -49,7 +50,9 @@ struct MatchingProfileView: View {
                 .buttonStyle(.bordered)
                 Spacer()
                 Button {
-                    // 수락
+                    guard let currentUserId = UserManager.shared.currentUser?.userId,
+                          let partneruserId = user.userId else { return }
+                    firestoreManager.addChatRoom(userId: currentUserId, partnerId: partneruserId)
                 } label: {
                     Text("수락하기")
                         .frame(width: 110, height: 30)

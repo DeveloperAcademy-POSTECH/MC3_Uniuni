@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 struct ChatListView: View {
-    @StateObject var firestoreManager: FirestoreManager = FirestoreManager()
+    @EnvironmentObject var firestoreManager: FirestoreManager
     @State private var isLogin: Bool = false
     @State var userEmail = ""
     @State var userId = ""

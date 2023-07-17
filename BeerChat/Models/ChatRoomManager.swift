@@ -104,7 +104,7 @@ class FirestoreManager: ObservableObject {
         }
     }
 
-    func addChatRoom(userId: String, partnerId: String, roomName: String) {
+    func addChatRoom(userId: String, partnerId: String) {
         let newChatRoom = ChatRoom(questioner: userId, respondent: partnerId, status: "pending", keyword: "test")
         do {
             let data = try Firestore.Encoder().encode(newChatRoom)
