@@ -23,22 +23,17 @@ struct ChatView: View {
     var body: some View {
         VStack {
             // 채팅 메시지 표시
-            ScrollViewReader { _ in
+            ScrollViewReader { proxy in
                 ScrollView {
                     ForEach(chatViewModel.messages, id: \.id) { message in
                         ChatBubble(message: message, userId: userId)
                     }
                 }
             }
-
+            
             ChatField()
+                .frame(height: 80)
                 .environmentObject(chatViewModel)
         }
     }
 }
-
-// struct ChatView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ChatView()
-//    }
-// }
