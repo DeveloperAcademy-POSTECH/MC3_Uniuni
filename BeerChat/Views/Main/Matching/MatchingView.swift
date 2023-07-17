@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct MatchingView: View {
+    @State var seletedKeywords: Set<String> = []
+    @State var lastKeyword: String = ""
     var body: some View {
-        Text("MatchingView")
+        VStack(alignment: .leading) {
+            Text("질문할\n키워드 선택")
+                .font(.largeTitle.weight(.bold))
+            Spacer()
+            KeywordListView(seletedKewords: $seletedKeywords, lastkeyword: $lastKeyword)
+            Button(action: {} ) {
+                Text("확인")
+                    .font(.title2.weight(.bold))
+                    .foregroundColor(Color.white)
+            }
+            .frame(height: 60)
+            .frame(maxWidth: .infinity)
+            .background(.gray)
+            .cornerRadius(11)
+        }
+        .padding()
     }
 }
 

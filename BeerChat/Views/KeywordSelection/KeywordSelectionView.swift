@@ -8,15 +8,22 @@
 import SwiftUI
 import FirebaseAuth
 
-
 struct KeywordSelectionView: View {
     @State var seletedKewords: Set<String> = []
-    
+    @State var lastkeyword: String = ""
+    var keywordCount: Int {
+        seletedKewords.count
+    }
     var body: some View {
         VStack(alignment: .leading) {
             Text("답변할\n키워드 선택")
                 .font(.largeTitle.weight(.bold))
-            KeywordListView(seletedKewords: $seletedKewords)
+            KeywordListView(seletedKewords: $seletedKewords, lastkeyword: $lastkeyword)
+                .onChange(of: keywordCount) { newValue in
+                    if keywordCount > 5 {
+                        seletedKewords.remove(lastkeyword)
+                    }
+                }
             Spacer()
             Button(action: {
                 UserManager.shared.fetchCurrentUser(userId: "iyNMs7XySOgBVmxNOS0lvkUlt6m2") { user in
