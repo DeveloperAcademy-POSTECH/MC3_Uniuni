@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct KeywordListView: View {
-    @State var currentKeyword: Keyword?
+    @Binding var currentKeyword: Keyword?
     @Binding var seletedKewords: Set<String>
     @Binding var lastkeyword: String
     var body: some View {
@@ -40,6 +40,6 @@ struct KeywordListView: View {
 
 struct KeywordListView_Previews: PreviewProvider {
     static var previews: some View {
-        KeywordListView(seletedKewords: .constant([]), lastkeyword: .constant(""))
+        KeywordListView(currentKeyword: .constant(nil), seletedKewords: .constant([]), lastkeyword: .constant(""))
     }
 }

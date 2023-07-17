@@ -12,6 +12,7 @@ struct MatchingView: View {
     @State var lastKeyword: String = ""
     @State var isMatching: Bool = false
     @State var matchingUser: User?
+    @State var currentKeyword: Keyword?
     @Binding var chatRoomId: String
     @Binding var pageIndex: Int
     var keywordCount: Int {
@@ -23,11 +24,14 @@ struct MatchingView: View {
             Text("질문할\n키워드 선택")
                 .font(.largeTitle.weight(.bold))
             Spacer()
-            KeywordListView(seletedKewords: $seletedKeywords, lastkeyword: $lastKeyword)
+            KeywordListView(currentKeyword: $currentKeyword, seletedKewords: $seletedKeywords, lastkeyword: $lastKeyword)
                 .onChange(of: keywordCount) { _ in
                     if keywordCount > 2 {
                         seletedKeywords.remove(lastKeyword)
                     }
+                }
+                .onChange(of: currentKeyword) { _ in
+                    seletedKeywords.removeAll()
                 }
             Button(action: {
                 UserManager.shared.fetchUserKeyword(keywords: Array(seletedKeywords)) { user in
