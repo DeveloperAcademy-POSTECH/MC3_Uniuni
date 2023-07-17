@@ -45,7 +45,7 @@ struct KeywordSelectionView: View {
             }) {
                 Text("확인")
                     .font(.title2.weight(.bold))
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color.black)
                     .frame(height: 60)
                     .frame(maxWidth: .infinity)
                     .background(seletedKewords.isEmpty ? Color(UIColor.systemGray4) : .blue)
