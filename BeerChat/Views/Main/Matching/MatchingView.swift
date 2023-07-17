@@ -36,7 +36,7 @@ struct MatchingView: View {
                         self.isMatching = true
                     }
                 }
-            } ) {
+            }) {
                 Text("확인")
                     .font(.title2.weight(.bold))
                     .foregroundColor(Color.white)

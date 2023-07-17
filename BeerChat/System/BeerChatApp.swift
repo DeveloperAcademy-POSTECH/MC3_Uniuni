@@ -15,7 +15,7 @@ struct BeerChatApp: App {
     init() {
         FirebaseApp.configure()
         UserManager.shared.fetchCurrentUser(userId: "iyNMs7XySOgBVmxNOS0lvkUlt6m2", completion: { user in
-            if let userid = user?.userId {
+            if (user?.userId) != nil {
                 PageManager.shared.currentPage = .main
             }
         })

@@ -33,8 +33,8 @@ struct ChatBubble: View {
     }
 }
 
-//struct ChatBubble_Previews: PreviewProvider {
+// struct ChatBubble_Previews: PreviewProvider {
 //    static var previews: some View {
 //        ChatBubble()
 //    }
-//}
+// }

@@ -32,7 +32,7 @@ struct ChatListView: View {
                                             .foregroundColor(.white)
                                             .padding(.horizontal, 8)
                                             .padding(.vertical, 4)
-                                            .background (
+                                            .background(
                                                 Rectangle()
                                                     .fill(userId == chatRoom.questioner ? .indigo : .purple)
                                                     .cornerRadius(12)
@@ -43,7 +43,7 @@ struct ChatListView: View {
                                             .foregroundColor(.white)
                                             .padding(.horizontal, 8)
                                             .padding(.vertical, 4)
-                                            .background (
+                                            .background(
                                                 Rectangle()
                                                     .fill(chatRoom.status != "end" ? .blue : Color(UIColor.systemGray4))
                                                     .cornerRadius(12)

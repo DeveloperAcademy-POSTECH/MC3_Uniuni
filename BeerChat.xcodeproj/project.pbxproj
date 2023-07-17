@@ -35,6 +35,7 @@
 		FFB0EDF52A6411820034DE4F /* Keywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0EDF42A6411820034DE4F /* Keywords.swift */; };
 		FFB0EDF72A6421470034DE4F /* keywordGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB0EDF62A6421470034DE4F /* keywordGridView.swift */; };
 		FFB0EDF92A64CEF30034DE4F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FFB0EDF82A64CEF30034DE4F /* GoogleService-Info.plist */; };
+		FFB0EDFD2A6513F60034DE4F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FFB0EDFC2A6513F60034DE4F /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		FFB0EDF42A6411820034DE4F /* Keywords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keywords.swift; sourceTree = "<group>"; };
 		FFB0EDF62A6421470034DE4F /* keywordGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keywordGridView.swift; sourceTree = "<group>"; };
 		FFB0EDF82A64CEF30034DE4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FFB0EDFC2A6513F60034DE4F /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		BF31D62D2A5BAB970069D5FF = {
 			isa = PBXGroup;
 			children = (
+				FFB0EDFC2A6513F60034DE4F /* .swiftlint.yml */,
 				BF31D6382A5BAB970069D5FF /* BeerChat */,
 				BF31D6372A5BAB970069D5FF /* Products */,
 				BFBD7A462A61BD3600A3FC55 /* Frameworks */,
@@ -301,6 +304,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB0EDFD2A6513F60034DE4F /* .swiftlint.yml in Resources */,
 				BF31D63E2A5BAB980069D5FF /* Assets.xcassets in Resources */,
 				FFB0EDF92A64CEF30034DE4F /* GoogleService-Info.plist in Resources */,
 			);

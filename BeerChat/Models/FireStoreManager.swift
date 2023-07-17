@@ -9,7 +9,6 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-
 struct Message: Codable, Identifiable {
     @DocumentID var id: String?
     let uid: String
@@ -76,8 +75,8 @@ class ChatViewModel: ObservableObject {
         let newMessage = Message(uid: userId, text: messageText, timestamp: currentTime)
         do {
             let data = try Firestore.Encoder().encode(newMessage)
-            _ = try database.collection("chatRoom").document(self.roomId).collection("messages").addDocument(data: data)
-            _ = try database.collection("chatRoom").document(self.roomId).updateData(["timestamp" : currentTime])
+            database.collection("chatRoom").document(self.roomId).collection("messages").addDocument(data: data)
+            database.collection("chatRoom").document(self.roomId).updateData(["timestamp": currentTime])
 //            newMessageText = ""
         } catch {
             print("메시지 전송 에러: \(error.localizedDescription)")
