@@ -53,6 +53,10 @@ final class UserManager {
 
     @Published private(set) var currentUser: User?
 
+    func signOut() {
+        self.currentUser = nil
+    }
+
     func addUser(documentId: String, user: User, completion: @escaping (Bool) -> Void) {
         do {
             let data = try Firestore.Encoder().encode(user)
@@ -99,7 +103,7 @@ final class UserManager {
     func fetchCurrentUser(userId: String, completion: @escaping (User?) -> Void) {
         database.collection("user").document(userId).getDocument { (document, error) in
             if error != nil {
-                print("Error reading the document \(error.debugDescription)")
+                print("Error reading the document: \(error.debugDescription)")
                 completion(nil)
                 return
             }
@@ -107,7 +111,7 @@ final class UserManager {
                 self.currentUser = try? document.data(as: User.self)
             } else {
                 self.currentUser = nil
-                print("User Document does not exist")
+                print("Error reading the document: User Document does not exist")
             }
             completion(self.currentUser)
         }
