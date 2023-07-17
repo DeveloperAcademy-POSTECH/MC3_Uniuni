@@ -29,7 +29,7 @@ struct KeywordListView: View {
                         currentKeyword = keyword
                     }
                     if currentKeyword == keyword {
-                        KeywordGridView(keyword: keyword.detail, seletedKewords: $seletedKewords, lastkeyword: $lastkeyword)
+                        KeywordGridView(keywords: keyword.detail, seletedKewords: $seletedKewords, lastkeyword: $lastkeyword)
                     }
                 }
             }
