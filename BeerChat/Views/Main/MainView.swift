@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct MainView: View {
+    @State var isMatching: Bool = false
+    @State var matchingUser: User?
+    
     var body: some View {
         NavigationStack {
             TabView {
-                MatchingView()
+                MatchingView(isMatching: $isMatching, matchingUser: $matchingUser)
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Main")
+                    }
+                    .onChange(of: isMatching) { newValue in
+                        if !newValue {
+                            matchingUser = nil
+                        }
+                    }
+                    .fullScreenCover(isPresented: $isMatching) {
+                        if let matchingUser = self.matchingUser {
+                            MatchingProfileView(user: matchingUser, isPresentedSheet: $isMatching)
+                        }
                     }
                 ChatListView()
                     .tabItem {
@@ -27,7 +40,7 @@ struct MainView: View {
                         Text("My")
                     }
             }
-            .onAppear() {
+            .onAppear {
                 UITabBar.appearance().backgroundColor = UIColor.white.withAlphaComponent(0.75)
             }
         }
