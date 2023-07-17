@@ -23,7 +23,7 @@ struct KeywordListView: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(25)
-                    .background(.gray)
+                    .background(keyword == currentKeyword ? Color(UIColor.systemGray) : Color(UIColor.systemGray4))
                     .cornerRadius(20)
                     .onTapGesture {
                         currentKeyword = keyword
@@ -34,7 +34,6 @@ struct KeywordListView: View {
                 }
             }
         }
-        .padding()
     }
 }
 

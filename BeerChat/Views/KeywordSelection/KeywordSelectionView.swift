@@ -18,7 +18,7 @@ struct KeywordSelectionView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("답변할\n키워드 선택")
-                .font(.largeTitle.weight(.bold))
+                .font(.title.weight(.bold))
             KeywordListView(currentKeyword: $currentKeyword, seletedKewords: $seletedKewords, lastkeyword: $lastkeyword)
                 .onChange(of: keywordCount) { _ in
                     if keywordCount > 5 {
@@ -45,14 +45,16 @@ struct KeywordSelectionView: View {
             }) {
                 Text("확인")
                     .font(.title2.weight(.bold))
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color.black)
+                    .frame(height: 60)
+                    .frame(maxWidth: .infinity)
+                    .background(seletedKewords.isEmpty ? Color(UIColor.systemGray4) : .blue)
+                    .cornerRadius(11)
             }
-            .frame(height: 60)
-            .frame(maxWidth: .infinity)
-            .background(.gray)
-            .cornerRadius(11)
+            .disabled(seletedKewords.isEmpty)
+            .opacity(seletedKewords.isEmpty ? 0.3 : 1)
         }
-        .padding()
+        .padding(20)
     }
 }
 

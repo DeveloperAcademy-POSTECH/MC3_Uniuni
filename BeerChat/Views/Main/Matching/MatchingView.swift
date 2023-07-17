@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MatchingView: View {
-    @State var seletedKeywords: Set<String> = []
+    @State var selectedKeywords: Set<String> = []
     @State var lastKeyword: String = ""
     @State var isMatching: Bool = false
     @State var matchingUser: User?
@@ -16,25 +16,25 @@ struct MatchingView: View {
     @Binding var chatRoomId: String
     @Binding var pageIndex: Int
     var keywordCount: Int {
-        seletedKeywords.count
+        selectedKeywords.count
     }
     
     var body: some View {
         VStack(alignment: .leading) {
             Text("질문할\n키워드 선택")
-                .font(.largeTitle.weight(.bold))
+                .font(.title.weight(.bold))
             Spacer()
-            KeywordListView(currentKeyword: $currentKeyword, seletedKewords: $seletedKeywords, lastkeyword: $lastKeyword)
+            KeywordListView(currentKeyword: $currentKeyword, seletedKewords: $selectedKeywords, lastkeyword: $lastKeyword)
                 .onChange(of: keywordCount) { _ in
                     if keywordCount > 2 {
-                        seletedKeywords.remove(lastKeyword)
+                        selectedKeywords.remove(lastKeyword)
                     }
                 }
                 .onChange(of: currentKeyword) { _ in
-                    seletedKeywords.removeAll()
+                    selectedKeywords.removeAll()
                 }
             Button(action: {
-                UserManager.shared.fetchUserKeyword(keywords: Array(seletedKeywords)) { user in
+                UserManager.shared.fetchUserKeyword(keywords: Array(selectedKeywords)) { user in
                     if let user = user {
                         guard let currentUserId = UserManager.shared.currentUser?.userId else { return }
                         self.matchingUser = user.filter { $0.userId != currentUserId }.randomElement()
@@ -42,15 +42,17 @@ struct MatchingView: View {
                     }
                 }
             }) {
-                Text("확인")
+                Text("매칭!")
                     .font(.title2.weight(.bold))
-                    .foregroundColor(Color.white)
+                    .foregroundColor(Color.black)
+                    .frame(height: 60)
+                    .frame(maxWidth: .infinity)
+                    .background(selectedKeywords.isEmpty ? Color(UIColor.systemGray4) : .blue)
+                    .cornerRadius(11)
             }
-            .disabled(seletedKeywords.isEmpty)
-            .frame(height: 60)
-            .frame(maxWidth: .infinity)
-            .background(seletedKeywords.isEmpty ? .gray : .blue)
-            .cornerRadius(11)
+            .disabled(selectedKeywords.isEmpty)
+            .opacity(selectedKeywords.isEmpty ? 0.3 : 1)
+
         }
         .padding()
         .onChange(of: isMatching) { newValue in

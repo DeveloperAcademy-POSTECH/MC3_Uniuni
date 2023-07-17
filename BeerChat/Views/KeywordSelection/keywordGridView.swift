@@ -39,7 +39,7 @@ struct KeywordGridView: View {
             Text(tag)
                 .font(.system(size: fontSize))
                 .padding(10)
-                .background(seletedKewords.contains(tag) ? .blue : Color(cgColor: UIColor.lightGray.cgColor))
+                .background(seletedKewords.contains(tag) ? .blue : Color(UIColor.systemGray4))
                 .foregroundColor(.white)
                 .cornerRadius(10)
         }

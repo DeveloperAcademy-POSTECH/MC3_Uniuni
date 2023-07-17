@@ -16,30 +16,31 @@ struct MatchingProfileView: View {
     @EnvironmentObject var firestoreManager: FirestoreManager
     var body: some View {
         VStack(alignment: .leading) {
-            Text("닉네임과의\n대화 어때요?")
-                .font(.system(size: 40, weight: .bold))
+            Text("이 사람과\n대화 어때요?")
+                .font(.title.weight(.bold))
                 .padding(.bottom, 54)
-            Image(systemName: "photo")
+            Image("DummyProfile")
                 .resizable()
+                .scaledToFit()
                 .frame(maxWidth: .infinity)
             VStack(spacing: 24) {
-                Text("\(user.affiliation) (\(user.yearOfAdmission))")
+                Text("\(user.affiliation) (\(String(user.yearOfAdmission)))")
                     .font(.body.weight(.bold))
                     .padding(20)
                     .frame(maxWidth: .infinity)
-                    .background(Color(.lightGray))
+                    .background(Color(UIColor.systemGray4))
                     .cornerRadius(20)
-                Text("#AppleDeveloperAcademy #개발")
+                Text("\(user.keywords.map { "#\($0)" }.joined(separator: " "))")
                     .font(.body.weight(.bold))
                     .padding(20)
                     .frame(maxWidth: .infinity)
-                    .background(Color(.lightGray))
+                    .background(Color(UIColor.systemGray4))
                     .cornerRadius(20)
-                Text("대화 내용")
+                Text(keyword)
                     .font(.body.weight(.bold))
                     .padding(20)
                     .frame(maxWidth: .infinity)
-                    .background(Color(.lightGray))
+                    .background(Color(UIColor.systemGray4))
                     .cornerRadius(20)
             }
             .padding(.vertical, 36)
@@ -48,9 +49,13 @@ struct MatchingProfileView: View {
                     isPresentedSheet = false
                 } label: {
                     Text("거절하기")
-                        .frame(width: 110, height: 30)
+                        .font(.body.weight(.bold))
+                        .padding(.vertical, 16)
+                        .padding(.horizontal, 52)
+                        .background(Color(UIColor.systemGray4))
+                        .cornerRadius(20)
+                        .foregroundColor(.blue)
                 }
-                .buttonStyle(.bordered)
                 Spacer()
                 Button {
                     guard let currentUserId = UserManager.shared.currentUser?.userId,
@@ -64,10 +69,13 @@ struct MatchingProfileView: View {
                     isPresentedSheet = false
                 } label: {
                     Text("수락하기")
-                        .frame(width: 110, height: 30)
+                        .font(.body.weight(.bold))
+                        .padding(.vertical, 16)
+                        .padding(.horizontal, 52)
+                        .background(.blue)
+                        .cornerRadius(20)
+                        .foregroundColor(.white)
                 }
-                .buttonStyle(.borderedProminent)
-
             }
         }
         .padding()
