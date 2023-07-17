@@ -8,13 +8,37 @@
 import SwiftUI
 
 struct ChatView: View {
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    @ObservedObject var chatViewModel: ChatViewModel
+
+    var chatRoom: ChatRoom
+    var userId: String
+
+    init(chatRoom: ChatRoom, userId: String) {
+        self.chatRoom = chatRoom
+        self.userId = userId
+        self.chatViewModel = ChatViewModel(roomId: chatRoom.roomId!, userId: userId)
+    }
+
     var body: some View {
-        Text("ChatView")
+        VStack {
+            // 채팅 메시지 표시
+            ScrollViewReader { proxy in
+                ScrollView {
+                    ForEach(chatViewModel.messages, id: \.id) { message in
+                        ChatBubble(message: message, userId: userId)
+                    }
+                }
+            }
+
+            ChatField()
+                .environmentObject(chatViewModel)
+        }
     }
 }
 
-struct ChatView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatView()
-    }
-}
+//struct ChatView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChatView()
+//    }
+//}

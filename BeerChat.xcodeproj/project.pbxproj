@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B33825D2A632DE60091229E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B33825C2A632DE60091229E /* GoogleService-Info.plist */; };
+		5BF274842A642E8100A28C1E /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF274822A642E8100A28C1E /* FireStoreManager.swift */; };
+		5BF274852A642E8100A28C1E /* ChatRoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF274832A642E8100A28C1E /* ChatRoomManager.swift */; };
+		5BF274892A645E5100A28C1E /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF274882A645E5100A28C1E /* ChatBubble.swift */; };
+		5BF2748B2A64628E00A28C1E /* ChatField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2748A2A64628E00A28C1E /* ChatField.swift */; };
 		BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */; };
 		BF31D63C2A5BAB970069D5FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF31D63B2A5BAB970069D5FF /* ContentView.swift */; };
 		BF31D63E2A5BAB980069D5FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF31D63D2A5BAB980069D5FF /* Assets.xcassets */; };
@@ -25,10 +30,14 @@
 		BFBD7A3A2A619C7200A3FC55 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A392A619C7200A3FC55 /* MainView.swift */; };
 		BFBD7A482A61BD3600A3FC55 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BFBD7A472A61BD3600A3FC55 /* FirebaseAnalytics */; };
 		BFBD7A4C2A61BF9000A3FC55 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */; };
-		BFBD7A4F2A61D45500A3FC55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFBD7A4E2A61D45500A3FC55 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B33825C2A632DE60091229E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		5BF274822A642E8100A28C1E /* FireStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireStoreManager.swift; sourceTree = "<group>"; };
+		5BF274832A642E8100A28C1E /* ChatRoomManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomManager.swift; sourceTree = "<group>"; };
+		5BF274882A645E5100A28C1E /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		5BF2748A2A64628E00A28C1E /* ChatField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatField.swift; sourceTree = "<group>"; };
 		BF31D6362A5BAB970069D5FF /* BeerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF31D6392A5BAB970069D5FF /* BeerChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerChatApp.swift; sourceTree = "<group>"; };
 		BF31D63B2A5BAB970069D5FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,7 +54,6 @@
 		BFBD7A392A619C7200A3FC55 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		BFBD7A4D2A61CCDB00A3FC55 /* BeerChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeerChat.entitlements; sourceTree = "<group>"; };
-		BFBD7A4E2A61D45500A3FC55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +91,7 @@
 		BF31D6382A5BAB970069D5FF /* BeerChat */ = {
 			isa = PBXGroup;
 			children = (
-				BFBD7A4E2A61D45500A3FC55 /* GoogleService-Info.plist */,
+				5B33825C2A632DE60091229E /* GoogleService-Info.plist */,
 				BFBD7A4D2A61CCDB00A3FC55 /* BeerChat.entitlements */,
 				BFBD7A1E2A60F5EC00A3FC55 /* Models */,
 				BFBD7A1F2A60F5F400A3FC55 /* Resources */,
@@ -118,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				BFBD7A312A610E6E00A3FC55 /* PageManager.swift */,
+				5BF274832A642E8100A28C1E /* ChatRoomManager.swift */,
+				5BF274822A642E8100A28C1E /* FireStoreManager.swift */,
 				BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */,
 			);
 			path = Models;
@@ -135,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				BFBD7A2F2A60F6A800A3FC55 /* CustomButton.swift */,
+				5BF2748A2A64628E00A28C1E /* ChatField.swift */,
+				5BF274882A645E5100A28C1E /* ChatBubble.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -282,8 +294,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFBD7A4F2A61D45500A3FC55 /* GoogleService-Info.plist in Resources */,
 				BF31D63E2A5BAB980069D5FF /* Assets.xcassets in Resources */,
+				5B33825D2A632DE60091229E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,10 +329,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBD7A282A60F68800A3FC55 /* ProfileView.swift in Sources */,
+				5BF274852A642E8100A28C1E /* ChatRoomManager.swift in Sources */,
+				5BF274842A642E8100A28C1E /* FireStoreManager.swift in Sources */,
 				BFBD7A3A2A619C7200A3FC55 /* MainView.swift in Sources */,
 				BF31D63C2A5BAB970069D5FF /* ContentView.swift in Sources */,
 				BFBD7A4C2A61BF9000A3FC55 /* UserManager.swift in Sources */,
 				BFBD7A2A2A60F68E00A3FC55 /* ChatView.swift in Sources */,
+				5BF274892A645E5100A28C1E /* ChatBubble.swift in Sources */,
 				BFBD7A302A60F6A800A3FC55 /* CustomButton.swift in Sources */,
 				BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */,
 				BFBD7A2C2A60F69500A3FC55 /* ChatListView.swift in Sources */,
@@ -329,6 +344,7 @@
 				BFBD7A342A610F5700A3FC55 /* SplashView.swift in Sources */,
 				BFBD7A262A60F68200A3FC55 /* KeywordSelectionView.swift in Sources */,
 				BFBD7A362A61103200A3FC55 /* EntryView.swift in Sources */,
+				5BF2748B2A64628E00A28C1E /* ChatField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +474,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = M6KTL34CVP;
+				DEVELOPMENT_TEAM = 5Z238234D5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -488,7 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = M6KTL34CVP;
+				DEVELOPMENT_TEAM = 5Z238234D5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
