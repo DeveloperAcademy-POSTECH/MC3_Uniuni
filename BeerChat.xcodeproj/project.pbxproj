@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BE7F6C32A6592510011E15F /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE7F6C22A6592510011E15F /* SearchBar.swift */; };
 		5BF274842A642E8100A28C1E /* FireStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF274822A642E8100A28C1E /* FireStoreManager.swift */; };
 		5BF274852A642E8100A28C1E /* ChatRoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF274832A642E8100A28C1E /* ChatRoomManager.swift */; };
 		5BF274892A645E5100A28C1E /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF274882A645E5100A28C1E /* ChatBubble.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BE7F6C22A6592510011E15F /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		5BF274822A642E8100A28C1E /* FireStoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireStoreManager.swift; sourceTree = "<group>"; };
 		5BF274832A642E8100A28C1E /* ChatRoomManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomManager.swift; sourceTree = "<group>"; };
 		5BF274882A645E5100A28C1E /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				BFBD7A2F2A60F6A800A3FC55 /* CustomButton.swift */,
 				5BF2748A2A64628E00A28C1E /* ChatField.swift */,
+				5BE7F6C22A6592510011E15F /* SearchBar.swift */,
 				5BF274882A645E5100A28C1E /* ChatBubble.swift */,
 			);
 			path = Components;
@@ -355,6 +358,7 @@
 				BF31D63A2A5BAB970069D5FF /* BeerChatApp.swift in Sources */,
 				BFBD7A2C2A60F69500A3FC55 /* ChatListView.swift in Sources */,
 				BFBD7A322A610E6E00A3FC55 /* PageManager.swift in Sources */,
+				5BE7F6C32A6592510011E15F /* SearchBar.swift in Sources */,
 				BFBD7A382A61104900A3FC55 /* MatchingView.swift in Sources */,
 				BFBD7A262A60F68200A3FC55 /* KeywordSelectionView.swift in Sources */,
 				BFBD7A5D2A6419B000A3FC55 /* EmailVerifyView.swift in Sources */,

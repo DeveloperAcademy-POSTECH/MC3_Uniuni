@@ -9,6 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+// TODO: ChatRoom 파일 분리 고민해보기
 struct ChatRoom: Codable {
     @DocumentID var roomId: String?
     var questioner: String
@@ -46,6 +47,7 @@ struct ChatRoom: Codable {
     }
 }
 
+// TODO: 클래스 이름 변경
 final class FirestoreManager: ObservableObject {
     static let shared = FirestoreManager()
     private init () {}

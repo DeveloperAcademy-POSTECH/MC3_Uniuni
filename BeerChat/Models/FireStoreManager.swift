@@ -4,11 +4,13 @@
 //
 //  Created by Nayeon Kim on 2023/07/16.
 //
+// TODO: 파일명 변경
 
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+// TODO: Message 파일 분리 고민해보기
 struct Message: Codable, Identifiable {
     @DocumentID var id: String?
     let uid: String
