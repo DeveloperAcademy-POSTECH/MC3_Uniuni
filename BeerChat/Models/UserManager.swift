@@ -116,4 +116,27 @@ final class UserManager {
             completion(self.currentUser)
         }
     }
+    
+    func fetchUserKeyword(keywords: [String], completion: @escaping ([User]?) -> Void) {
+        database.collection("user").whereField("keywords", arrayContainsAny: keywords).getDocuments { (querySnapshot, error) in
+            if error != nil {
+                print("Error reading the document \(error.debugDescription)")
+                completion(nil)
+                return
+            }
+            
+            var users: [User] = []
+            
+            if let documents = querySnapshot?.documents {
+                for document in documents {
+                    if let user = try? document.data(as: User.self) {
+                        users.append(user)
+                    }
+                }
+            } else {
+                print("User Document does not exist")
+            }
+            completion(users)
+        }
+    }
 }
