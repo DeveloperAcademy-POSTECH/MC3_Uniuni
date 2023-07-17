@@ -10,7 +10,7 @@ import SwiftUI
 struct KeywordListView: View {
     @State var currentKeyword: Keyword?
     @Binding var seletedKewords: Set<String>
-    
+    @Binding var lastkeyword: String
     var body: some View {
         ScrollView {
             ForEach(Keyword.allCases, id: \.self) { keyword in
@@ -29,7 +29,7 @@ struct KeywordListView: View {
                         currentKeyword = keyword
                     }
                     if currentKeyword == keyword {
-                        KeywordGridView(keyword: keyword.detail, seletedKewords: $seletedKewords)
+                        KeywordGridView(keyword: keyword.detail, seletedKewords: $seletedKewords, lastkeyword: $lastkeyword)
                     }
                 }
             }
@@ -40,6 +40,6 @@ struct KeywordListView: View {
 
 struct KeywordListView_Previews: PreviewProvider {
     static var previews: some View {
-        KeywordListView(seletedKewords: .constant([]))
+        KeywordListView(seletedKewords: .constant([]), lastkeyword: .constant(""))
     }
 }
