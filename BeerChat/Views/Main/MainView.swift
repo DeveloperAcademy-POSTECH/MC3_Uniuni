@@ -8,37 +8,33 @@
 import SwiftUI
 
 struct MainView: View {
-    @State var isMatching: Bool = false
-    @State var matchingUser: User?
+    @State var pageIndex: Int = 0
+    @State var chatRoomId: String = ""
+    @StateObject var firestoreManager: FirestoreManager = FirestoreManager()
     
     var body: some View {
         NavigationStack {
-            TabView {
-                MatchingView(isMatching: $isMatching, matchingUser: $matchingUser)
+            TabView(selection: $pageIndex) {
+                MatchingView(chatRoomId: $chatRoomId, pageIndex: $pageIndex)
+                    .environmentObject(firestoreManager)
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Main")
                     }
-                    .onChange(of: isMatching) { newValue in
-                        if !newValue {
-                            matchingUser = nil
-                        }
-                    }
-                    .fullScreenCover(isPresented: $isMatching) {
-                        if let matchingUser = self.matchingUser {
-                            MatchingProfileView(user: matchingUser, isPresentedSheet: $isMatching)
-                        }
-                    }
-                ChatListView()
+                    .tag(0)
+                ChatListView(chatroomId: $chatRoomId)
+                    .environmentObject(firestoreManager)
                     .tabItem {
                         Image(systemName: "message.fill")
                         Text("Chat")
                     }
+                    .tag(1)
                 ProfileView()
                     .tabItem {
                         Image(systemName: "person.fill")
                         Text("My")
                     }
+                    .tag(2)
             }
             .onAppear {
                 UITabBar.appearance().backgroundColor = UIColor.white.withAlphaComponent(0.75)

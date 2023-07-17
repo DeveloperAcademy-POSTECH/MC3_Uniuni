@@ -104,13 +104,15 @@ class FirestoreManager: ObservableObject {
         }
     }
 
-    func addChatRoom(userId: String, partnerId: String, roomName: String) {
+    func addChatRoom(userId: String, partnerId: String, completion: @escaping (String?) -> Void) {
         let newChatRoom = ChatRoom(questioner: userId, respondent: partnerId, status: "pending", keyword: "test")
         do {
             let data = try Firestore.Encoder().encode(newChatRoom)
             _ = try database.collection("chatRoom").addDocument(data: data)
+            completion(newChatRoom.roomId)
         } catch {
             print("메시지 전송 에러: \(error.localizedDescription)")
+            completion(nil)
         }
     }
 }

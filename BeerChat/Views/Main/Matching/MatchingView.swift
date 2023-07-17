@@ -10,8 +10,10 @@ import SwiftUI
 struct MatchingView: View {
     @State var seletedKeywords: Set<String> = []
     @State var lastKeyword: String = ""
-    @Binding var isMatching: Bool
-    @Binding var matchingUser: User?
+    @State var isMatching: Bool = false
+    @State var matchingUser: User?
+    @Binding var chatRoomId: String
+    @Binding var pageIndex: Int
     var keywordCount: Int {
         seletedKeywords.count
     }
@@ -46,11 +48,21 @@ struct MatchingView: View {
             .cornerRadius(11)
         }
         .padding()
+        .onChange(of: isMatching) { newValue in
+            if !newValue {
+                matchingUser = nil
+            }
+        }
+        .fullScreenCover(isPresented: $isMatching) {
+            if let matchingUser = self.matchingUser {
+                MatchingProfileView(user: matchingUser, isPresentedSheet: $isMatching, chatRoomId: $chatRoomId, pageIndex: $pageIndex)
+            }
+        }
     }
 }
 
 struct MatchingView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchingView(isMatching: .constant(false), matchingUser: .constant(nil))
+        MatchingView(chatRoomId: .constant(""), pageIndex: .constant(0))
     }
 }

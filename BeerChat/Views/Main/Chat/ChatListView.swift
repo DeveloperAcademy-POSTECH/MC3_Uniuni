@@ -9,24 +9,18 @@ import SwiftUI
 import Firebase
 
 struct ChatListView: View {
-    @StateObject var firestoreManager: FirestoreManager = FirestoreManager()
+    @EnvironmentObject var firestoreManager: FirestoreManager
     @State private var isLogin: Bool = false
+    @Binding var chatroomId: String
     @State var userEmail = ""
     @State var userId = ""
     @State var searchingText = ""
     let firebaseAuth = Auth.auth()
-    init() {
-        if let user = UserManager.shared.currentUser {
-            if let uid = user.userId {
-                userId = uid
-            }
-        }
-    }
     var body: some View {
         List {
             ForEach(firestoreManager.chatRooms, id: \.self.roomId) { chatRoom in
                 NavigationLink(destination: ChatView(chatRoom: chatRoom, userId: userId)
-                    .environmentObject(firestoreManager)) {
+                    .environmentObject(firestoreManager), isActive: isActiveBinding(chatRoom.roomId ?? "")) {
                         if let recentMessage = chatRoom.recentMessage {
                             HStack {
                                 Image(systemName: "person.fill")
@@ -70,12 +64,31 @@ struct ChatListView: View {
                     }
             }
         }
+        .onAppear {
+            if let user = UserManager.shared.currentUser {
+                if let uid = user.userId {
+                    userId = uid
+                }
+            }
+        }
+    }
+    
+    private func isActiveBinding(_ user: String) -> Binding<Bool> {
+        .init {
+            user == chatroomId
+        } set: { isActive in
+            if isActive {
+                chatroomId = user
+            }
+        }
     }
 }
 
 struct ChatListView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatListView()
-            .environmentObject(FirestoreManager())
+        NavigationStack {
+            ChatListView(chatroomId: .constant(""))
+                .environmentObject(FirestoreManager())
+        }
     }
 }
