@@ -10,22 +10,13 @@ import Firebase
 
 struct ChatListView: View {
     @State private var isLogin: Bool = false
-    @Binding var chatRoomId: String
-    @State var userEmail = ""
     @State var userId = ""
-    @State var searchingText = ""
+    @State var userEmail = ""
+    @State var text = ""
     @StateObject var firestoreManager = FirestoreManager.shared
     @State var isChatOn = false
     let firebaseAuth = Auth.auth()
 
-    init() {
-        _userId = State(initialValue: "")
-        if let user = UserManager.shared.currentUser {
-            if let uid = user.userId {
-                _userId = State(initialValue: uid)
-            }
-        }
-    }
     enum Identity: String {
         case question = "질문"
         case reply = "답변"
@@ -110,7 +101,7 @@ struct ChatListView: View {
 struct ChatListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ChatListView(chatRoomId: .constant(""))
+            ChatListView()
         }
     }
 }

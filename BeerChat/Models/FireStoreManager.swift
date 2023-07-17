@@ -79,7 +79,6 @@ class ChatViewModel: ObservableObject {
             let data = try Firestore.Encoder().encode(newMessage)
             database.collection("chatRoom").document(self.roomId).collection("messages").addDocument(data: data)
             database.collection("chatRoom").document(self.roomId).updateData(["timestamp": currentTime])
-//            newMessageText = ""
         } catch {
             print("메시지 전송 에러: \(error.localizedDescription)")
         }

@@ -14,13 +14,13 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             TabView(selection: $pageIndex) {
-                MatchingView(chatRoomId: $chatRoomId, pageIndex: $pageIndex)
+                MatchingView(pageIndex: $pageIndex)
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Main")
                     }
                     .tag(0)
-                ChatListView(chatRoomId: $chatRoomId)
+                ChatListView()
                     .tabItem {
                         Image(systemName: "message.fill")
                         Text("Chat")

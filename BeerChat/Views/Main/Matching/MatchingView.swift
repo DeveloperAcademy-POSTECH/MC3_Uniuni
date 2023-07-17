@@ -13,7 +13,6 @@ struct MatchingView: View {
     @State var isMatching: Bool = false
     @State var matchingUser: User?
     @State var currentKeyword: Keyword?
-    @Binding var chatRoomId: String
     @Binding var pageIndex: Int
     var keywordCount: Int {
         selectedKeywords.count
@@ -70,6 +69,6 @@ struct MatchingView: View {
 
 struct MatchingView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchingView(chatRoomId: .constant(""), pageIndex: .constant(0))
+        MatchingView(pageIndex: .constant(0))
     }
 }
