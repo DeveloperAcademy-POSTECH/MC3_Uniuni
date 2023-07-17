@@ -10,6 +10,7 @@ import FirebaseAuth
 
 struct KeywordSelectionView: View {
     @State var seletedKewords: Set<String> = []
+    @State var currentKeyword: Keyword?
     @State var lastkeyword: String = ""
     var keywordCount: Int {
         seletedKewords.count
@@ -18,7 +19,7 @@ struct KeywordSelectionView: View {
         VStack(alignment: .leading) {
             Text("답변할\n키워드 선택")
                 .font(.largeTitle.weight(.bold))
-            KeywordListView(seletedKewords: $seletedKewords, lastkeyword: $lastkeyword)
+            KeywordListView(currentKeyword: $currentKeyword, seletedKewords: $seletedKewords, lastkeyword: $lastkeyword)
                 .onChange(of: keywordCount) { _ in
                     if keywordCount > 5 {
                         seletedKewords.remove(lastkeyword)
