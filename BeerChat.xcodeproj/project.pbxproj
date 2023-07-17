@@ -135,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				BFBD7A312A610E6E00A3FC55 /* PageManager.swift */,
+				5BF274832A642E8100A28C1E /* ChatRoomManager.swift */,
+				5BF274822A642E8100A28C1E /* FireStoreManager.swift */,
 				BFBD7A5A2A64121900A3FC55 /* KeyboardManager.swift */,
 				BFBD7A4B2A61BF9000A3FC55 /* UserManager.swift */,
 				FFB0EDF42A6411820034DE4F /* Keywords.swift */,
