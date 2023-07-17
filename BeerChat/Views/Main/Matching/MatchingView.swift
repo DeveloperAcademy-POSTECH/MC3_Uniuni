@@ -12,6 +12,7 @@ struct MatchingView: View {
     @State var lastKeyword: String = ""
     @State var isMatching: Bool = false
     @State var matchingUser: User?
+    @Binding var chatRoomId: String
     @Binding var pageIndex: Int
     var keywordCount: Int {
         seletedKeywords.count
@@ -54,7 +55,7 @@ struct MatchingView: View {
         }
         .fullScreenCover(isPresented: $isMatching) {
             if let matchingUser = self.matchingUser {
-                MatchingProfileView(user: matchingUser, isPresentedSheet: $isMatching, pageIndex: $pageIndex)
+                MatchingProfileView(user: matchingUser, isPresentedSheet: $isMatching, chatRoomId: $chatRoomId, pageIndex: $pageIndex)
             }
         }
     }
@@ -62,6 +63,6 @@ struct MatchingView: View {
 
 struct MatchingView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchingView(pageIndex: .constant(0))
+        MatchingView(chatRoomId: .constant(""), pageIndex: .constant(0))
     }
 }

@@ -9,19 +9,20 @@ import SwiftUI
 
 struct MainView: View {
     @State var pageIndex: Int = 0
+    @State var chatRoomId: String = ""
     @StateObject var firestoreManager: FirestoreManager = FirestoreManager()
     
     var body: some View {
         NavigationStack {
             TabView(selection: $pageIndex) {
-                MatchingView(pageIndex: $pageIndex)
+                MatchingView(chatRoomId: $chatRoomId, pageIndex: $pageIndex)
                     .environmentObject(firestoreManager)
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Main")
                     }
                     .tag(0)
-                ChatListView()
+                ChatListView(chatroomId: $chatRoomId)
                     .environmentObject(firestoreManager)
                     .tabItem {
                         Image(systemName: "message.fill")
