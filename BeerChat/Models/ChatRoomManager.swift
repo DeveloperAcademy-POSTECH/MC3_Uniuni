@@ -26,7 +26,7 @@ struct ChatRoom: Codable {
         case respondent
         case status
         case keyword
-        case recentMessage
+        case recentMessageDocumentReference
     }
 
     init(from decoder: Decoder) throws {
@@ -36,7 +36,7 @@ struct ChatRoom: Codable {
         respondent = try container.decode(String.self, forKey: .respondent)
         status = try container.decode(String.self, forKey: .status)
         keyword = try container.decode(String.self, forKey: .keyword)
-        recentMessageDocumentReference = try? container.decode(DocumentReference.self, forKey: .recentMessage)
+        recentMessageDocumentReference = try? container.decode(DocumentReference.self, forKey: .recentMessageDocumentReference)
     }
     
     init(questioner: String, respondent: String, status: String, keyword: String) {
@@ -75,34 +75,18 @@ final class FirestoreManager: ObservableObject {
                                         print("Error : \(error.localizedDescription)")
                                     } else if let document = document, document.exists {
                                         data.recentMessage = try? document.data(as: Message.self)
+                                        self.chatRooms.append(data)
                                     }
                                 }
+                            } else {
+                                self.chatRooms.append(data)
                             }
-                            self.chatRooms.append(data)
                         }
                     }
                     completion(true)
                 }
             }
     }
-    /*
-    func fetchUsersByKeywords(matchingKeywords: [String]) {
-        if matchingKeywords.isEmpty {
-            return
-        }
-        database.collection("user").whereField("keywords", arrayContainsAny: matchingKeywords).getDocuments { (querySnapshot, error) in
-            if let error = error {
-                print("Error getting documents: \(error)")
-            } else {
-                for document in querySnapshot!.documents {
-                    // print("\(document.documentID): \(document.data())")
-                    if let user = try? document.data(as: User.self) {
-                        self.matchingUsers.append(user)
-                    }
-                }
-            }
-        }
-    }*/
 
     func addChatRoom(userId: String, partnerId: String, keyword: String, completion: @escaping (String?) -> Void) {
         let newChatRoom = ChatRoom(questioner: userId, respondent: partnerId, status: "pending", keyword: keyword)
@@ -117,7 +101,6 @@ final class FirestoreManager: ObservableObject {
                                 print("Error: Document ID is nil")
                                 return
                             }
-                    print(documentID)
                     self.recentChatRoomId = documentID
                     completion(self.recentChatRoomId)
                 }
